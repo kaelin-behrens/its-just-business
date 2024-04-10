@@ -1,7 +1,11 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 function AuthPopup() {
+  const navigate = useNavigate()
+
   const [password, setPassword] = useState('')
+  const answer = "test123"
 
   function handleChange(e){
     setPassword(e.target.value)
@@ -11,7 +15,13 @@ function AuthPopup() {
 
   function handleSubmit(e){
     e.preventDefault()
-    console.log(`Submitted: ${password}`)
+    if(password == answer){
+      console.log("correct")
+      navigate("/404")
+    } else{
+      setPassword('')
+      console.log("incorrect")
+    }
   }
 
 
