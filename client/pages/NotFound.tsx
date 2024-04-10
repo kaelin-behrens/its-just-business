@@ -4,7 +4,7 @@ function NotFound() {
 
   return (
     <>
-      <p>404</p>
+      <p>404 ERROR</p>
     </>
   )
 }
