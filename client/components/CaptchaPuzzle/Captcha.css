@@ -1,0 +1,22 @@
+.blue {
+    border: solid #007bff 2px;
+}
+
+.blank {
+  border: solid #ffffff29 2px;
+}
+
+.cap-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 50%
+  }
+  
+  .cap-item img {
+    width: 120px;
+    height: 120px; 
+    object-fit: cover;
+    display: block;
+  }
