@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "express": "^4.17.2",
+    "interactjs": "^1.10.27",
     "knex": "^2.5.1",
     "sqlite3": "^5.1.6",
     "superagent": "^8.1.2"
