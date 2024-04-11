@@ -1,9 +1,9 @@
 function CaptchaImage(props){
 
-    const {image} = props
+    const {info} = props
 
     return <>
-    <img alt="" src={image}></img></>
+    <img alt="" src={info.image}></img></>
     
 }
 

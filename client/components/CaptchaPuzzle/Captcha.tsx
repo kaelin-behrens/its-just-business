@@ -1,11 +1,23 @@
 import CaptchaImage from "./CaptchaImage"
+import * as helper from './helperFunctions'
+import * as data from './data'
+import { Pic, OrganisedPic } from "../../../models/Captcha"
 
-const testUrl = "https://www.warrenphotographic.co.uk/photography/sqrs/06568.jpg"
-const imgArr = [testUrl, testUrl, testUrl, testUrl]
+let imgArr : Pic[] = data.dataA.concat(data.dataB)
+helper.shuffle(imgArr)
+imgArr = imgArr.slice(0, 9)
+const captchaData : OrganisedPic[] = []
+for (let i = 0; i < imgArr.length; i++) {
+    captchaData.push({image: imgArr[i].image, type: imgArr[i].type, index: i})
+}
+
 
 function Captcha(){
     return <>
-    {imgArr.map(item => <CaptchaImage key={item} image={item}/>)}
+    {captchaData.map(pic => 
+       <CaptchaImage key={pic.index} info={pic}/>
+            )
+        }
     </>
     
 }
