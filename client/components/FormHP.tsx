@@ -2,18 +2,18 @@ import { useState } from "react"
 import Captcha from "./CaptchaPuzzle/Captcha"
 
 function FormHP() {
-  const [displayCaptcha, setDisplayCaptcha] = useState(false)
+  const [displayCaptcha, setDisplayCaptcha] = useState('form')
 
   function handleSubmit(e){
     e.preventDefault()
-    setDisplayCaptcha(true)
+    setDisplayCaptcha('captcha')
   }
 
   const reportText = "Q1 witnessed robust sales growth across multiple segments, underscoring the resilience and adaptability of our sales force. Despite prevailing market headwinds, our strategic initiatives have yielded commendable results, bolstering our market positioning and driving sustained revenue expansion.Aggressive market penetration strategies led to a notable increase in our market share, consolidating our foothold in key territories. By leveraging targeted marketing campaigns and fostering strategic partnerships, we have augmented our brand visibility and expanded our customer base."
 
     return (
       <div style={{border: 'grey 1px solid', backgroundColor: 'lightgrey'}}>
-        {!displayCaptcha && 
+        {displayCaptcha =='form' && 
         <form onSubmit={handleSubmit}>
           <input defaultValue={"Executive Summary"}></input>
           <textarea defaultValue={reportText} rows={6} ></textarea>
@@ -26,7 +26,8 @@ function FormHP() {
           </select>
           <button type="submit" style={{border: 'black 1px solid', backgroundColor: 'bisque'}}>Submit</button>
         </form>}
-        {displayCaptcha && <Captcha/>}
+        {displayCaptcha == 'captcha' && <Captcha currentDisplay={displayCaptcha} newDisplay={setDisplayCaptcha}/>}
+        {displayCaptcha == 'complete' && <p>password</p>}
       </div>
     )
   }

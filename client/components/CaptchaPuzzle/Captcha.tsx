@@ -5,7 +5,7 @@ import { Pic, OrganisedPic } from "../../../models/Captcha"
 import { useEffect, useState } from 'react'
 import './Captcha.css';
 
-let imgArr : Pic[] = data.dataA.concat(data.dataB)
+const imgArr : Pic[] = data.dataA.concat(data.dataB)
 helper.shuffle(imgArr)
 const newImgArr = imgArr.slice(0, 9)
 let captchaData : OrganisedPic[] = []
@@ -14,11 +14,13 @@ for (let i = 0; i < newImgArr.length; i++) {
 }
 
 
-function Captcha(){
+function Captcha(props){
+    const {newDisplay} = props
     const initialGridState = [false, false, false, false, false, false, false, false, false]
     const [grid, setGrid] = useState(initialGridState)
     const [startAgain, setStartAgain] = useState(false)
     const chosen = captchaData[0].type
+    const [resultText, setResultText] = useState("")
 
 
     const [resetTrigger, setResetTrigger] = useState(false);
@@ -41,14 +43,14 @@ function Captcha(){
         function handleSum(){
             for (let i = 0; i < captchaData.length; i++) {
                 if(captchaData[i].type == chosen && grid[i] == false){
-                    console.log('Captcha failed')
+                    setResultText("Incorrect answer. Please try again.")
                     setGrid(initialGridState)
                     setResetTrigger(true)
                     setStartAgain(true)
                     return
                     
                 } else if (captchaData[i].type != chosen && grid[i] == true){
-                    console.log('Captcha failed')
+                    setResultText("Incorrect answer. Please try again.")
                     setGrid(initialGridState)
                     setResetTrigger(true)
                     setStartAgain(true)
@@ -57,11 +59,9 @@ function Captcha(){
             }
             console.log('Captcha Passed')
             setGrid(initialGridState)
-            setResetTrigger(true)
-            setStartAgain(true)
+            newDisplay('complete')
         }
     
-
 
     return <>
     <h1>Select all {chosen}s</h1>
@@ -71,6 +71,7 @@ function Captcha(){
             )
         }</div>
          <button onClick={handleSum}>Submit</button>
+         <p>{resultText}</p>
          
     </>
     

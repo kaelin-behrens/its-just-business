@@ -1,7 +1,10 @@
 .blue {
-    border: solid blue 2px;
+    border: solid #007bff 2px;
 }
 
+.blank {
+  border: solid #ffffff29 2px;
+}
 
 .cap-container {
     display: flex;
