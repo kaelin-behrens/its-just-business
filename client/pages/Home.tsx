@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import AuthPopup from '../components/AuthPopup'
 import FormHP from '../components/FormHP'
+import WhackAMole from '../components/WhackAMole'
 
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
@@ -56,6 +57,7 @@ function Home() {
         <div className="captcha">
           <p>captcha</p>
           <FormHP />
+          <WhackAMole />
         </div>
         <div className="whackamole">
           <p>whackamole</p>
