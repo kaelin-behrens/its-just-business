@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import AuthPopup from '../components/AuthPopup'
 import FormHP from '../components/FormHP'
+import Graph from '../components/drag_and_drop/Graph'
+import Example from '../components/drag_and_drop/Example'
 
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
@@ -17,6 +19,10 @@ function Home() {
           </h6>
           <p>This report is due at 5pm</p>{' '}
           {/*//TODO replace with dynamic time */}
+        </div>
+        <div>
+          {' '}
+          <img src="../../public/logo.svg" alt="sad face"></img>
         </div>
         <div>
           <h1>Importnant Business Report</h1>
@@ -51,7 +57,10 @@ function Home() {
       <div className="body">
         <div className="codebreaker">
           <p>codebreaker</p>
-          <img src="/" alt="group of people doing business" />
+          <img
+            src="../../public/stock photography 7.webp"
+            alt="group of people doing business"
+          />
         </div>
         <div className="captcha">
           <p>captcha</p>
@@ -62,6 +71,7 @@ function Home() {
         </div>
         <div className="dragndrop">
           <p>dragndrop</p>
+          <Graph />
         </div>
         <button onClick={handleSubmit}>Submit</button>
         {showPopUp && <AuthPopup />}
