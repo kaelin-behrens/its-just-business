@@ -1,9 +1,30 @@
+import { useEffect, useState } from "react"
+
 function CaptchaImage(props){
-
     const {info} = props
+    const [selected, setSelected] = useState(false)
+    const newGrid = props.toChild
 
-    return <>
-    <img alt="" src={info.image}></img></>
+    // handles reset behaviour after submission
+    const {startAgain, stop} = props 
+    useEffect(() => {
+        if (startAgain) {
+            setSelected(false)
+            stop(false)
+        }
+      }, [startAgain, stop]);
+
+    function handleClick(){
+        setSelected(!selected)
+        newGrid.splice(info.index, 1, !selected)
+        props.toParent(newGrid)
+    }
+
+
+    return <div className="cap-item">
+    <button key={info.index} onClick={handleClick} className={selected ? 'blue': 'blank'} >
+            <img src={info.image} alt={info.image}/>
+            </button></div>
     
 }
 
