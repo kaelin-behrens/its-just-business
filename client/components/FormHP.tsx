@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Captcha from "./CaptchaPuzzle/Captcha"
 
 function FormHP() {
   const [displayCaptcha, setDisplayCaptcha] = useState(false)
@@ -25,7 +26,7 @@ function FormHP() {
           </select>
           <button type="submit" style={{border: 'black 1px solid', backgroundColor: 'bisque'}}>Submit</button>
         </form>}
-        {displayCaptcha && <p>CAPTCHA</p>}
+        {displayCaptcha && <Captcha/>}
       </div>
     )
   }
