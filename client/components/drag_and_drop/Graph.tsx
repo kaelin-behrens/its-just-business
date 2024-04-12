@@ -62,24 +62,24 @@ export default function Graph() {
     <>
       <div className="graphBg">
         <p className="graphTitle">Welcome to quarterly productivity profits</p>
-        <ul>
-          {bars.map((bar) => (
-            <li key={bar.id}>
-              {/* <button className="graphBar">{bar.name}</button> */}
-              <DndContext
-                sensors={sensors}
-                collisionDetection={closestCorners}
-                onDragEnd={handleDragEnd}
-              >
-                {!parent ? draggable : null}
-                <Droppable id="droppable" className="graphBar">
-                  {parent === 'droppable' ? draggable : 'Drop here'}
-                </Droppable>
-              </DndContext>
-            </li>
-          ))}
-        </ul>
+        {/* <ul> */}
+        {/* {bars.map((bar) => (
+            <li key={bar.id}> */}
+        {/* <button className="graphBar">{bar.name}</button> */}
+        <DndContext
+          sensors={sensors}
+          collisionDetection={closestCorners}
+          onDragEnd={handleDragEnd}
+        >
+          {!parent ? draggable : null}
+          <Droppable id="droppable" className="graphBar" bars={bars}>
+            {/* {parent === 'droppable' ? draggable : 'Drop here'} */}
+          </Droppable>
+        </DndContext>
+        {/* </li>
+          ))} */}
+        {/* </ul> */}
       </div>
-    </>
+    </> //<Column id="toDo" tasks={tasks} />
   )
 }
