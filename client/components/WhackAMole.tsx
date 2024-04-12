@@ -1,48 +1,62 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
-const WhackAMole = () => {
+// type StateType = 'healthy' | 'corrupt'
+type CorruptState = 'Bad' | 'Evil' | 'Uncomfortable'
+
+interface Sentence {
+  // type: StateType
+  text: string
+  corruptText: CorruptState
+  healthyText: string
+}
+
+const inititalGame: Array<Sentence> = [
+  { text: '', corruptText: 'Bad', healthyText: 'Good 01.' },
+  { text: '', corruptText: 'Evil', healthyText: 'Good 02.' },
+]
+
+function WhackAMole() {
   function randomNumber() {
-    return Math.floor(Math.random() * 6) + 1
+    return Math.random()
   }
 
-  const seedContentArr = [
-    <button key="line1" onClick={handleClick}>
-      Test Button Text
-    </button>,
-    <button key="line2">This report is due blah blah</button>,
-    <button key="line3">This report is due blah blah</button>,
-    <button key="line4">This report is due blah blah</button>,
-    <button key="line5">This report is due blah blah</button>,
-    <button key="line6">This report is due blah blah</button>,
-    <button key="line7">This report is due blah blah</button>,
-  ]
+  const [game, setGame] = useState(inititalGame)
 
-  const evilTextArr = [
-    { name: 'Bad', action: () => console.log('Bad things') },
-    { name: 'Evil', action: () => console.log('Evil things') },
-    { name: 'madness', action: () => console.log('Mad things') },
-    {
-      name: 'uncomfortable',
-      action: () => console.log('uncomfortable things'),
-    },
-  ]
-  const [content, setContent] = useState(seedContentArr)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const randomizedGame = game.map((sentence) => ({
+        ...sentence,
+        text:
+          randomNumber() > 0.2 ? sentence.corruptText : sentence.healthyText,
+      }))
+      setGame(randomizedGame)
+    }, 1000)
 
-  function handleClick() {
-    const targetIndex = randomNumber()
-    const newContent = seedContentArr.map((el, i) => {
-      return i === targetIndex ? evilTextArr[randomNumber() - 1] : el
-    })
-    setContent(newContent)
-    console.log('click', newContent)
+    return () => {
+      clearInterval(timer)
+    }
+  }, [])
+
+  function cleanse(clickedSentence: Sentence) {
+    setGame((game) =>
+      game.map((current) => ({
+        ...current,
+        text:
+          clickedSentence.healthyText === current.healthyText
+            ? current.healthyText
+            : current.text,
+      })),
+    )
   }
 
   return (
-    <div>
-      {seedContentArr.map((item, index) => (
-        <p key={index}>{item}</p>
+    <p>
+      {game.map((sentence, idx) => (
+        <span key={idx} onClick={() => cleanse(sentence)}>
+          {sentence.text}&nbsp;
+        </span>
       ))}
-    </div>
+    </p>
   )
 }
 
