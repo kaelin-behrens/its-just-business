@@ -2,35 +2,45 @@ import { useState } from 'react'
 
 const WhackAMole = () => {
   function randomNumber() {
-    return Math.floor(Math.random() * 2) + 1
+    return Math.floor(Math.random() * 6) + 1
   }
 
-  const imageSources = [
-    { index: 0, src: '../companyplaceholder.png' },
-    { index: 1, src: '../companyplaceholder.png' },
-    { index: 2, src: '../companyplaceholder.png' },
+  const seedContentArr = [
+    <button key="line1" onClick={handleClick}>
+      Test Button Text
+    </button>,
+    <button key="line2">This report is due blah blah</button>,
+    <button key="line3">This report is due blah blah</button>,
+    <button key="line4">This report is due blah blah</button>,
+    <button key="line5">This report is due blah blah</button>,
+    <button key="line6">This report is due blah blah</button>,
+    <button key="line7">This report is due blah blah</button>,
   ]
-  const [imageData, setImageData] = useState(imageSources)
 
-  function handleChange(event) {
-    const targetIndex: number = randomNumber()
-    setImageData([
-      { index: 0, src: '../companyplaceholder.png' },
-      { index: 1, src: '../evil-corp.png' },
-      { index: 2, src: '../companyplaceholder.png' },
-    ])
+  const evilTextArr = [
+    { name: 'Bad', action: () => console.log('Bad things') },
+    { name: 'Evil', action: () => console.log('Evil things') },
+    { name: 'madness', action: () => console.log('Mad things') },
+    {
+      name: 'uncomfortable',
+      action: () => console.log('uncomfortable things'),
+    },
+  ]
+  const [content, setContent] = useState(seedContentArr)
 
-    //based on a randomly given index, change the src to the 'evil corp' logo
+  function handleClick() {
+    const targetIndex = randomNumber()
+    const newContent = seedContentArr.map((el, i) => {
+      return i === targetIndex ? evilTextArr[randomNumber() - 1] : el
+    })
+    setContent(newContent)
+    console.log('click', newContent)
   }
-
-  // TODO - onClick function to change the src from 'evil corp' back to 'placeholder'
 
   return (
     <div>
-      {imageData.map((ele) => (
-        <button onClick={handleChange} key={ele.index}>
-          <img src={ele.src} alt="Description" key={ele.index} />
-        </button>
+      {seedContentArr.map((item, index) => (
+        <p key={index}>{item}</p>
       ))}
     </div>
   )
