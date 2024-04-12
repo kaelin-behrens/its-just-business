@@ -1,15 +1,15 @@
 import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable'
 
-import { Task } from '../Task/Task'
+import { Bar } from './Bar'
 
-import './Column.css'
+import './Graph.css'
 
-export const Column = ({ tasks }) => {
+export const Graph = ({ tasks }) => {
   return (
-    <div className="column">
+    <div className="graph">
       <SortableContext items={tasks} strategy={verticalListSortingStrategy}>
         {tasks.map((task) => (
-          <Task key={task.id} id={task.id} title={task.title} />
+          <Bar key={task.id} id={task.id} title={task.title} />
         ))}
       </SortableContext>
     </div>

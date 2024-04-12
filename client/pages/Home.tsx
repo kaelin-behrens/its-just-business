@@ -2,7 +2,7 @@ import { useState } from 'react'
 import AuthPopup from '../components/AuthPopup'
 import FormHP from '../components/FormHP'
 import { createPassword, splitPassword } from '../components/Password/password'
-import Graph from '../components/drag_and_drop/Graph'
+import DnD from '../components/DragAndDrop/DnD'
 import Example from '../components/drag_and_drop/Example'
 
 function Home() {
@@ -79,7 +79,7 @@ function Home() {
         </div>
         <div className="dragndrop">
           <p>dragndrop</p>
-          <Graph />
+          <DnD />
         </div>
         <button onClick={handleSubmit}>Submit</button>
         {showPopUp && <AuthPopup answer={answer} />}

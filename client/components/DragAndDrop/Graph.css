@@ -1,0 +1,26 @@
+.graph {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-left: 64px;
+}
+#barOne {
+  width: 90%;
+}
+
+#barTwo {
+  width: 55%;
+}
+
+#barThree {
+  width: 19%;
+}
+
+#barFour {
+  width: 73%;
+}
+
+#barFive {
+  width: 42%;
+}
