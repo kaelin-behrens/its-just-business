@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import AuthPopup from '../components/AuthPopup'
 import FormHP from '../components/FormHP'
+import CodeBreaker from '../components/CodeBreaker'
 
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
@@ -51,6 +52,7 @@ function Home() {
       <div className="body">
         <div className="codebreaker">
           <p>codebreaker</p>
+          <CodeBreaker />
           <img src="/" alt="group of people doing business" />
         </div>
         <div className="captcha">
