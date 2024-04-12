@@ -79,7 +79,7 @@ function Home() {
         </div>
         <div className="dragndrop">
           <p>dragndrop</p>
-          <DnD />
+          <DnD clues={clues} />
         </div>
         <button onClick={handleSubmit}>Submit</button>
         {showPopUp && <AuthPopup answer={answer} />}

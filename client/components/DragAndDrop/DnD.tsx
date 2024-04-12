@@ -12,9 +12,10 @@ import { Graph } from './Graph'
 
 import './DnD.css'
 
-export default function DnD() {
+export default function DnD(props) {
+  const fragment = props.clues[3]
   const correctOrder = [5, 2, 1, 4, 3]
-
+  const [win, setWin] = useState(false)
   const [bars, setBars] = useState([
     { id: 1, title: 'barOne' },
     { id: 2, title: 'barTwo' },
@@ -34,7 +35,6 @@ export default function DnD() {
     setBars((bars) => {
       const originalPos = getBarPos(active.id)
       const newPos = getBarPos(over.id)
-      // console.log(bars)
       return arrayMove(bars, originalPos, newPos)
     })
   }
@@ -42,14 +42,15 @@ export default function DnD() {
   const checkOrder = () => {
     const currentOrder = bars.map((bar) => bar.id)
     if (currentOrder.toString() === correctOrder.toString()) {
+      setWin(true)
       console.log('WIN')
     }
   }
 
   return (
     <div className="graphBg">
+      {win && <h1>Password clue: {fragment}</h1>}
       <p className="graphTitle">Welcome to quarterly productivity profits</p>
-
       <DndContext
         sensors={sensors}
         collisionDetection={closestCorners}
