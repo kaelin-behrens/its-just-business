@@ -32,6 +32,8 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 200px);
   grid-gap: 80px;
+  /* CAE Changed for captcha display - may have to fix as puzzles added */
+  row-gap: 600px;
   padding: 20px;
 }
 
@@ -42,7 +44,8 @@
   background-color: #5bc0be;
   padding: 20px;
   border-radius: 8px;
-  height: 100%;
+  /* CAE Changed for captcha display - may have to fix as puzzles added */
+  height: 600px;
   color: #fff;
 }
 

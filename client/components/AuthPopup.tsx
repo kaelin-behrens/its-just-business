@@ -1,15 +1,15 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function AuthPopup() {
+function AuthPopup(props) {
   const navigate = useNavigate()
 
   const [password, setPassword] = useState('')
-  const answer = 'test123'
+  const answer = props.answer
+  console.log(answer)
 
   function handleChange(e) {
     setPassword(e.target.value)
-    console.log(password)
   }
 
   function handleSubmit(e) {
