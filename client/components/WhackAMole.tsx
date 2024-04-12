@@ -30,7 +30,7 @@ function WhackAMole() {
           randomNumber() > 0.2 ? sentence.corruptText : sentence.healthyText,
       }))
       setGame(randomizedGame)
-    }, 1000)
+    }, 5000)
 
     return () => {
       clearInterval(timer)
