@@ -14,6 +14,7 @@ import { Graph } from './Graph'
 import './DnD.css'
 
 export default function DnD() {
+  const correctOrder = [1, 5, 2, 4, 3]
   const [bars, setBars] = useState([
     { id: 1, title: 'barOne' },
     { id: 2, title: 'barTwo' },
@@ -33,15 +34,19 @@ export default function DnD() {
     setBars((bars) => {
       const originalPos = getBarPos(active.id)
       const newPos = getBarPos(over.id)
-      console.log(bars)
+      // console.log(bars)
       return arrayMove(bars, originalPos, newPos)
     })
   }
 
   const checkOrder = () => {
-    const currentOrder = ''
-    bars.map((bar) => currentOrder + String(bar.id))
-    console.log(currentOrder)
+    let currentOrder = []
+    currentOrder = bars.map((bar) => bar.id)
+    // console.log(currentOrder)
+    if (currentOrder == correctOrder) {
+      console.log('WIN')
+      return true
+    }
   }
 
   return (
