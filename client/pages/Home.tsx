@@ -13,7 +13,7 @@ function Home() {
   const [answer, setAnswer] = useState(String(createPassword()))
   console.log(answer)
   const [clues, setClues] = useState(splitPassword(answer))
-  console.log(clues)
+  // console.log(clues)
 
   return (
     <>
