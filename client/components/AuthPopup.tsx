@@ -6,7 +6,6 @@ function AuthPopup(props) {
 
   const [password, setPassword] = useState('')
   const answer = props.answer
-  console.log(answer)
 
   function handleChange(e) {
     setPassword(e.target.value)
