@@ -14,7 +14,7 @@ import { Graph } from './Graph'
 import './DnD.css'
 
 export default function DnD() {
-  const [tasks, setTasks] = useState([
+  const [bars, setBars] = useState([
     { id: 1, title: 'barOne' },
     { id: 2, title: 'barTwo' },
     { id: 3, title: 'barThree' },
@@ -22,26 +22,26 @@ export default function DnD() {
     { id: 5, title: 'barFive' },
   ])
 
-  const sensors = useSensors(
-    useSensor(PointerSensor),
-    useSensor(KeyboardSensor, {
-      coordinateGetter: sortableKeyboardCoordinates,
-    }),
-  )
+  const sensors = useSensors(useSensor(PointerSensor))
 
-  const getTaskPos = (id) => tasks.findIndex((task) => task.id === id)
+  const getBarPos = (id) => bars.findIndex((bar) => bar.id === id)
 
   const handleDragEnd = (event) => {
     const { active, over } = event
-
+    checkOrder()
     if (active.id === over.id) return
-
-    setTasks((tasks) => {
-      const originalPos = getTaskPos(active.id)
-      const newPos = getTaskPos(over.id)
-
-      return arrayMove(tasks, originalPos, newPos)
+    setBars((bars) => {
+      const originalPos = getBarPos(active.id)
+      const newPos = getBarPos(over.id)
+      console.log(bars)
+      return arrayMove(bars, originalPos, newPos)
     })
+  }
+
+  const checkOrder = () => {
+    const currentOrder = ''
+    bars.map((bar) => currentOrder + String(bar.id))
+    console.log(currentOrder)
   }
 
   return (
@@ -53,7 +53,7 @@ export default function DnD() {
         collisionDetection={closestCorners}
         onDragEnd={handleDragEnd}
       >
-        <Graph id="toDo" tasks={tasks} />
+        <Graph id="toDo" bars={bars} />
       </DndContext>
     </div>
   )
