@@ -16,7 +16,7 @@ helper.shuffle(password)
 const result = password.reduce((a, c) => {
     return a + c;
   }, "");
-  return splitPassword(result)
+  return result
 }
 
 export function splitPassword(password){

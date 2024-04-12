@@ -1,12 +1,20 @@
 import { useState } from 'react'
 import AuthPopup from '../components/AuthPopup'
 import FormHP from '../components/FormHP'
+import { createPassword, splitPassword } from '../components/Password/password'
 
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
   function handleSubmit() {
     setShowPopUP(!showPopUp)
   }
+
+  // console log pw for testing purposes
+  const [answer, setAnswer] = useState(String(createPassword()))
+  console.log(answer)
+  const [clues, setClues] = useState(splitPassword(answer))
+  console.log(clues)
+
   return (
     <>
       <div className="header">
@@ -55,7 +63,7 @@ function Home() {
         </div>
         <div className="captcha">
           <p>captcha</p>
-          <FormHP />
+          <FormHP clues={clues}/>
         </div>
         <div className="whackamole">
           <p>whackamole</p>
@@ -64,7 +72,7 @@ function Home() {
           <p>dragndrop</p>
         </div>
         <button onClick={handleSubmit}>Submit</button>
-        {showPopUp && <AuthPopup />}
+        {showPopUp && <AuthPopup answer={answer} />}
       </div>
     </>
   )

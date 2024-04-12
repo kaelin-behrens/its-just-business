@@ -1,18 +1,14 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { createPassword } from './Password/password'
 
-function AuthPopup() {
+function AuthPopup(props) {
   const navigate = useNavigate()
 
   const [password, setPassword] = useState('')
-  const answer = 'test123'
+  const answer = props.answer
+  console.log(answer)
 
   function handleChange(e) {
-    // display password generation for testing
-    const x = createPassword()
-    console.log(x)
-    // display password generation for testing ^^
     setPassword(e.target.value)
   }
 
