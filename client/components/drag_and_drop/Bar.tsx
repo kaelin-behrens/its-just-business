@@ -4,7 +4,7 @@ import { Task } from '../Task/Task'
 
 import './Column.css'
 
-export const Bar = ({ tasks }) => {
+export const Column = ({ tasks }) => {
   return (
     <div className="column">
       <SortableContext items={tasks} strategy={verticalListSortingStrategy}>

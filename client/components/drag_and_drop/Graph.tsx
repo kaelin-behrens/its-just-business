@@ -67,8 +67,8 @@ export default function Graph() {
             <li key={bar.id}>
               {/* <button className="graphBar">{bar.name}</button> */}
               <DndContext
-                // sensors={sensors}
-                // collisionDetection={closestCorners}
+                sensors={sensors}
+                collisionDetection={closestCorners}
                 onDragEnd={handleDragEnd}
               >
                 {!parent ? draggable : null}
@@ -79,16 +79,6 @@ export default function Graph() {
             </li>
           ))}
         </ul>
-        {/* <DndContext
-          // sensors={sensors}
-          // collisionDetection={closestCorners}
-          onDragEnd={handleDragEnd}
-        >
-          {!parent ? draggable : null}
-          <Droppable id="droppable" className="graphBar">
-            {parent === 'droppable' ? draggable : 'Drop here'}
-          </Droppable>
-        </DndContext> */}
       </div>
     </>
   )

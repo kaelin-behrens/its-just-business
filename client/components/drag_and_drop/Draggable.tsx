@@ -1,6 +1,7 @@
 import { useDraggable } from '@dnd-kit/core'
 import { CSS } from '@dnd-kit/utilities'
 import './Draggable.css'
+import { SortableContext } from '@dnd-kit/sortable'
 
 export function Draggable(props) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
