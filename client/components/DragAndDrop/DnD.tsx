@@ -13,7 +13,7 @@ import { Graph } from './Graph'
 import './DnD.css'
 
 export default function DnD() {
-  const correctOrder = [1, 2, 3, 4, 5]
+  const correctOrder = [5, 2, 1, 4, 3]
 
   const [bars, setBars] = useState([
     { id: 1, title: 'barOne' },
@@ -41,8 +41,7 @@ export default function DnD() {
 
   const checkOrder = () => {
     const currentOrder = bars.map((bar) => bar.id)
-    console.log(currentOrder)
-    if (currentOrder === correctOrder) {
+    if (currentOrder.toString() === correctOrder.toString()) {
       console.log('WIN')
     }
   }
