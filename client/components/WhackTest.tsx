@@ -44,11 +44,7 @@ export default function WhackTest() {
     'Our key performance indicators indicate a need for agile pivots to realign our strategic roadmap and capture emerging opportunities with precision timing.',
   ]
 
-  const [one, setOne] = useState(false)
-  const [two, setTwo] = useState(false)
-  const [three, setThree] = useState(false)
-  const [four, setFour] = useState(false)
-  const [five, setFive] = useState(false)
+  const [count, setCount] = useState(0)
 
   function randomNumber(max: number): number {
     return Math.floor(Math.random() * max)
@@ -56,36 +52,44 @@ export default function WhackTest() {
 
   function changeSentence() {
     const index = randomNumber(paragraph.length - 1)
-    paragraph[index].sentence = unsettle[index]
+    const updatedParagraph = [...paragraph]
+    updatedParagraph[index] = {
+      ...updatedParagraph[index],
+      sentence: unsettle[index],
+    }
+    setParagraph(updatedParagraph)
   }
 
   function handleClick(clicked) {
-    console.log(clicked.sentence)
     const indexToRevert = paragraph.findIndex(
       ({ sentence }) => sentence === clicked.sentence,
     )
-    console.log(indexToRevert)
 
     if (indexToRevert === -1) {
       changeSentence()
     }
-    console.log(paragraph[indexToRevert].sentence)
-    console.log(unsettle[indexToRevert])
 
-    paragraph[indexToRevert].sentence = normal[indexToRevert]
+    const updatedParagraph = [...paragraph]
+    updatedParagraph[indexToRevert] = {
+      ...updatedParagraph[indexToRevert],
+      sentence: normal[indexToRevert],
+    }
+    setParagraph(updatedParagraph)
+    setCount(count + 1)
   }
 
   useEffect(() => {
     const interval = setInterval(() => {
       console.log('This will be called every 5 seconds')
       changeSentence()
-    }, 10000)
+    }, 5000)
 
     return () => clearInterval(interval)
   }, [])
 
   return (
     <>
+      <p>{count}</p>
       <p style={{ fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sansserif' }}>
         {paragraph.map((sentence) => (
           <span key={sentence.id} onClick={() => handleClick(sentence)}>
