@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import AuthPopup from '../components/AuthPopup'
 import FormHP from '../components/FormHP'
+import { createPassword, splitPassword } from '../components/Password/password'
+import Timer from '../components/Timer'
 import WhackAMole from '../components/WhackAMole'
 
 function Home() {
@@ -8,6 +10,13 @@ function Home() {
   function handleSubmit() {
     setShowPopUP(!showPopUp)
   }
+
+  // console log pw for testing purposes
+  const [answer, setAnswer] = useState(String(createPassword()))
+  console.log(answer)
+  const [clues, setClues] = useState(splitPassword(answer))
+  // console.log(clues)
+
   return (
     <>
       <div className="header">
@@ -16,7 +25,9 @@ function Home() {
             Welcome back User93748GB57, we so value your work here, are you
             ready to get stuck in?
           </h6>
-          <p>This report is due at 5pm</p>{' '}
+          <p>
+            This report is due in <Timer />
+          </p>
           {/*//TODO replace with dynamic time */}
         </div>
         <div>
@@ -56,6 +67,7 @@ function Home() {
         </div>
         <div className="captcha">
           <p>captcha</p>
+          <FormHP clues={clues} />
           <FormHP />
           <WhackAMole />
         </div>
@@ -66,7 +78,7 @@ function Home() {
           <p>dragndrop</p>
         </div>
         <button onClick={handleSubmit}>Submit</button>
-        {showPopUp && <AuthPopup />}
+        {showPopUp && <AuthPopup answer={answer} />}
       </div>
     </>
   )

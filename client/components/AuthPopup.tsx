@@ -1,40 +1,37 @@
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-function AuthPopup() {
+function AuthPopup(props) {
   const navigate = useNavigate()
 
   const [password, setPassword] = useState('')
-  const answer = "test123"
+  const answer = props.answer
 
-  function handleChange(e){
+  function handleChange(e) {
     setPassword(e.target.value)
-    console.log(password)
-
   }
 
-  function handleSubmit(e){
+  function handleSubmit(e) {
     e.preventDefault()
-    if(password == answer){
-      console.log("correct")
-      navigate("/404")
-    } else{
+    if (password == answer) {
+      console.log('correct')
+      navigate('/404')
+    } else {
       setPassword('')
-      console.log("incorrect")
+      console.log('incorrect')
     }
   }
 
+  return (
+    // Temporary inline styling for the purposes of viewing and manually testing components
+    <div>
+      <p>fake Auth Popup</p>
+      <form onSubmit={handleSubmit}>
+        <input type="password" value={password} onChange={handleChange}></input>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  )
+}
 
-    return (
-      // Temporary inline styling for the purposes of viewing and manually testing components
-      <div style={{border: 'grey 1px solid', backgroundColor: 'beige'}}>
-        <p>fake Auth Popup</p>
-        <form onSubmit={handleSubmit}>
-          <input type="password" value={password} onChange={handleChange}></input>
-          <button type="submit" style={{border: 'black 1px solid', backgroundColor: 'bisque'}}>Submit</button>
-        </form>
-      </div>
-    )
-  }
-  
-  export default AuthPopup
+export default AuthPopup

@@ -1,0 +1,23 @@
+.blue {
+    border: solid #007bff 2px;
+}
+
+.blank {
+  border: solid #ffffff29 2px;
+}
+
+.cap-container {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  grid-template-rows: repeat(3, 120px);
+  row-gap: 10px;
+  column-gap: 20px;
+  padding: 10px;
+  margin: auto;
+  }
+  
+  .cap-item img {
+    width: 120px;
+    height: 120px; 
+    object-fit: cover;
+  }

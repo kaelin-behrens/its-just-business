@@ -1,3 +1,73 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.header > * {
+  margin-bottom: 20px;
+}
+
+.header h6 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.header p {
+  font-size: 16px;
+  color: #666;
+}
+
+.header h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  grid-gap: 80px;
+  /* CAE Changed for captcha display - may have to fix as puzzles added */
+  row-gap: 600px;
+  padding: 20px;
+}
+
+.codebreaker,
+.captcha,
+.whackamole,
+.dragndrop {
+  background-color: #5bc0be;
+  padding: 20px;
+  border-radius: 8px;
+  /* CAE Changed for captcha display - may have to fix as puzzles added */
+  height: 600px;
+  color: #fff;
+}
+
+.codebreaker p,
+.captcha p,
+.whackamole p,
+.dragndrop p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
