@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Captcha from "./CaptchaPuzzle/Captcha"
+import NotARobot from "./CaptchaPuzzle/NotARobot"
 
 function FormHP(props) {
   const [displayCaptcha, setDisplayCaptcha] = useState('form')
@@ -7,7 +8,7 @@ function FormHP(props) {
 
   function handleSubmit(e){
     e.preventDefault()
-    setDisplayCaptcha('captcha')
+    setDisplayCaptcha('checkbox')
   }
 
   const reportText = "Q1 witnessed robust sales growth across multiple segments, underscoring the resilience and adaptability of our sales force. Despite prevailing market headwinds, our strategic initiatives have yielded commendable results, bolstering our market positioning and driving sustained revenue expansion.Aggressive market penetration strategies led to a notable increase in our market share, consolidating our foothold in key territories. By leveraging targeted marketing campaigns and fostering strategic partnerships, we have augmented our brand visibility and expanded our customer base."
@@ -27,6 +28,7 @@ function FormHP(props) {
           </select>
           <button type="submit" style={{border: 'black 1px solid', backgroundColor: 'bisque'}}>Submit</button>
         </form>}
+        {displayCaptcha == 'checkbox' && <NotARobot currentDisplay={displayCaptcha} newDisplay={setDisplayCaptcha}/>}
         {displayCaptcha == 'captcha' && <Captcha currentDisplay={displayCaptcha} newDisplay={setDisplayCaptcha}/>}
         {displayCaptcha == 'complete' && <p>Password clue: {fragment}</p>}
       </div>
