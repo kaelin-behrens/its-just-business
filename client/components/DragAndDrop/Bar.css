@@ -1,0 +1,12 @@
+.bar {
+  background-color: #5bc0beff;
+  padding: 5px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+  touch-action: none;
+}
+
+p {
+  color: #1c2541ff;
+}
