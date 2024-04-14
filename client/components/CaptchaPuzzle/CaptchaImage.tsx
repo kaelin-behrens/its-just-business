@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
+import { random } from "./helperFunctions"
 
 function CaptchaImage(props){
     const {info} = props
     const [selected, setSelected] = useState(false)
     const newGrid = props.toChild
+    const flickerNum = random()
 
     // handles reset behaviour after submission
     const {startAgain, stop} = props 
@@ -22,10 +24,12 @@ function CaptchaImage(props){
 
 
     return <div className="cap-item">
-    <button key={info.index} onClick={handleClick} className={selected ? 'blue': 'blank'} >
-            <img src={info.image} alt={info.image}/>
+    <button key={info.index} onClick={handleClick} className={selected ? 'blue': 'blank'}>
+            <img src={info.image} className={flickerNum == 2 ? 'fade': 'flicker'} alt={info.image}/>
             </button></div>
     
 }
 
 export default CaptchaImage
+
+

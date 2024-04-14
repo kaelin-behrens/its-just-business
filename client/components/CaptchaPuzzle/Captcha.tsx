@@ -21,6 +21,7 @@ function Captcha(props){
     const [startAgain, setStartAgain] = useState(false)
     const chosen = captchaData[0].type
     const [resultText, setResultText] = useState("")
+    const [buttonSlide, setButtonSlide] = useState("")
 
 
     const [resetTrigger, setResetTrigger] = useState(false);
@@ -63,18 +64,29 @@ function Captcha(props){
         }
     
 
-    return <>
+    function handleButton() {
+        setButtonSlide('slide')
+    }
+
+    function handleButtonLeave() {
+        setButtonSlide('')
+    }
+
+    return <div className="puzzle-box">
     <h1>Select all {chosen}s</h1>
     <div className='cap-container'>
     {captchaData.map(pic => 
        <CaptchaImage key={pic.index} info={pic} startAgain={startAgain} stop={setStartAgain} toChild={grid} toParent={setGrid}/>
             )
         }</div>
-         <button onClick={handleSum}>Submit</button>
+        <div className="buttonzone" onMouseEnter={handleButton} onMouseLeave={handleButtonLeave}>
+         <button onClick={handleSum} className={buttonSlide}>Submit</button>
          <p>{resultText}</p>
-         
-    </>
+        </div> 
+    </div>
     
 }
 
 export default Captcha
+
+

@@ -10,4 +10,8 @@ export function shuffle(array) {
     return array
   }
 
+
+  export function random() {
+    return Math.floor(Math.random()*(1+4))
+  }
   
