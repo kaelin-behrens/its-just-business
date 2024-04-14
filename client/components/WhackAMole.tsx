@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 type CorruptState =
   | 'They are only poor because they were not strong enough to eat to eat toeattheothers.'
   | 'Lets run them down out in the wilds of this place we have made and eat them alive over and over and over till the red drips down our chin.'
-  | 'I will gorge upon the meek that the empty is finally filled till I cannot move till I cannot stand and all thats left is mineminemineminemine'
+  | 'I will gorge upon the meek that the empty is finally filled till I cannot move till I cannot stand and all thats left is mineminemineminemine.'
   | 'All these words just to hide the hunger.'
   | 'EvilTemp5'
   | 'EvilTemp6'
