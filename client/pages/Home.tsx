@@ -2,8 +2,12 @@ import { useState } from 'react'
 import AuthPopup from '../components/AuthPopup'
 import FormHP from '../components/FormHP'
 import { createPassword, splitPassword } from '../components/Password/password'
+
 import DnD from '../components/DragAndDrop/DnD'
 import Example from '../components/drag_and_drop/Example'
+import Timer from '../components/Timer'
+import WhackAMole from '../components/WhackAMole'
+
 
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
@@ -25,7 +29,9 @@ function Home() {
             Welcome back User93748GB57, we so value your work here, are you
             ready to get stuck in?
           </h6>
-          <p>This report is due at 5pm</p>{' '}
+          <p>
+            This report is due in <Timer />
+          </p>
           {/*//TODO replace with dynamic time */}
         </div>
         <div>
@@ -76,6 +82,7 @@ function Home() {
         </div>
         <div className="whackamole">
           <p>whackamole</p>
+          <WhackAMole clues={clues} />
         </div>
         <div className="dragndrop">
           <p>dragndrop</p>
