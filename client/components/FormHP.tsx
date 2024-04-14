@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import Captcha from './CaptchaPuzzle/Captcha'
 
-function FormHP() {
+function FormHP(props) {
   const [displayCaptcha, setDisplayCaptcha] = useState('form')
-  // const fragment = props.clues[1]
+  const fragment = props.clues[1]
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -40,7 +40,7 @@ function FormHP() {
           newDisplay={setDisplayCaptcha}
         />
       )}
-      {/* {displayCaptcha == 'complete' && <p>Password clue: {fragment}</p>} */}
+      {displayCaptcha == 'complete' && <p>Password clue: {fragment}</p>}
     </div>
   )
 }

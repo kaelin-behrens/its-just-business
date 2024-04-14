@@ -4,7 +4,6 @@ import FormHP from '../components/FormHP'
 import { createPassword, splitPassword } from '../components/Password/password'
 import Timer from '../components/Timer'
 import WhackAMole from '../components/WhackAMole'
-import WhackTest from '../components/WhackTest'
 
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
@@ -68,13 +67,11 @@ function Home() {
         </div>
         <div className="captcha">
           <p>captcha</p>
-          {/* <FormHP clues={clues} /> */}
-          <FormHP />
-          <WhackAMole />
+          <FormHP clues={clues} />
         </div>
         <div className="whackamole">
           <p>whackamole</p>
-          <WhackTest />
+          <WhackAMole clues={clues} />
         </div>
         <div className="dragndrop">
           <p>dragndrop</p>
