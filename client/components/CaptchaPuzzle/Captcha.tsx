@@ -5,7 +5,7 @@ import { Pic, OrganisedPic } from "../../../models/Captcha"
 import { useEffect, useState } from 'react'
 import './Captcha.css';
 
-const imgArr : Pic[] = data.dataA.concat(data.dataB)
+const imgArr : Pic[] = data.imageset[helper.random(0, 3)]
 helper.shuffle(imgArr)
 const newImgArr = imgArr.slice(0, 9)
 let captchaData : OrganisedPic[] = []
@@ -19,8 +19,9 @@ function Captcha(props){
     const initialGridState = [false, false, false, false, false, false, false, false, false]
     const [grid, setGrid] = useState(initialGridState)
     const [startAgain, setStartAgain] = useState(false)
+    const [count, setCount]= useState(0)
     const chosen = captchaData[0].type
-    const [resultText, setResultText] = useState("")
+    const [resultText, setResultText] = useState(`${count}/2 complete`)
     const [buttonSlide, setButtonSlide] = useState("")
 
 
@@ -32,6 +33,7 @@ function Captcha(props){
       }, [resetTrigger]);
 
     function rearrangeData(){
+        const imgArr = data.imageset[helper.random(0, 3)]
         helper.shuffle(imgArr)
         const newImgArr = imgArr.slice(0, 9)
         const captchaData : OrganisedPic[] = []
@@ -58,9 +60,15 @@ function Captcha(props){
                     return
                 }  
             }
-            console.log('Captcha Passed')
-            setGrid(initialGridState)
-            newDisplay('complete')
+            if(count + 1 == 2){
+                newDisplay('complete')
+            } else {
+                setResultText(`${count + 1}/2 complete`)
+                setCount(count + 1)
+                setGrid(initialGridState)
+                setResetTrigger(true)
+                setStartAgain(true)
+            }
         }
     
 

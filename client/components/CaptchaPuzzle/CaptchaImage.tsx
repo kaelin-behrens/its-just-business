@@ -5,7 +5,7 @@ function CaptchaImage(props){
     const {info} = props
     const [selected, setSelected] = useState(false)
     const newGrid = props.toChild
-    const flickerNum = random()
+    const flickerNum = random(0, 3)
 
     // handles reset behaviour after submission
     const {startAgain, stop} = props 
