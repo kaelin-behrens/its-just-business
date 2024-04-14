@@ -11,7 +11,7 @@ export function shuffle(array) {
   }
 
 
-  export function random() {
-    return Math.floor(Math.random()*(1+4))
+  export function random(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
   }
   

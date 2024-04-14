@@ -5,7 +5,7 @@ import { Pic, OrganisedPic } from "../../../models/Captcha"
 import { useEffect, useState } from 'react'
 import './Captcha.css';
 
-const imgArr : Pic[] = data.dataA.concat(data.dataB)
+const imgArr : Pic[] = data.imageset[helper.random(0, 3)]
 helper.shuffle(imgArr)
 const newImgArr = imgArr.slice(0, 9)
 let captchaData : OrganisedPic[] = []
@@ -33,6 +33,7 @@ function Captcha(props){
       }, [resetTrigger]);
 
     function rearrangeData(){
+        const imgArr = data.imageset[helper.random(0, 3)]
         helper.shuffle(imgArr)
         const newImgArr = imgArr.slice(0, 9)
         const captchaData : OrganisedPic[] = []
