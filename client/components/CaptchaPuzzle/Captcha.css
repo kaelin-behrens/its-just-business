@@ -4,10 +4,10 @@
 }
 
 .blue {
-    border: solid #007bff 3px;
-    width: 126px;
-    height: 126px;
-    background-color: rgb(40, 40, 40);
+  border: solid #007bff 3px;
+  width: 126px;
+  height: 126px;
+  background-color: rgb(40, 40, 40);
 }
 
 .blank {
@@ -88,3 +88,55 @@
   width: 360px;
   height: 80px
 }
+
+
+/* CHATBOT CSS */
+.chatbot {
+  background-color: #1C2541;
+  -webkit-text-fill-color: rgb(255, 255, 255);
+  height: fit-content;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: sans-serif;
+}
+
+.chatbot input,button {
+  margin-top: 10px;
+  -webkit-text-fill-color: rgb(0, 0, 0);
+}
+
+.chatlog {
+  border: 1px solid grey;
+  width: 300px;
+  background-color: #ffffff;
+  -webkit-text-fill-color: rgb(0, 0, 0);
+}
+
+.usertext {
+  text-align: right;
+  position: relative;
+  left: 30px;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  border: #919191 1px solid;
+  border-radius: 5px;
+  background-color: rgb(209, 209, 209);
+  -webkit-text-fill-color: #192424;
+  text-wrap: wrap;
+  margin-right: 30px;
+}
+
+
+.bottext {
+  text-align: left;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  border: #919191 1px solid;
+  border-radius: 5px;
+  background-color: #D3E1E0;
+  -webkit-text-fill-color: rgb(0, 0, 0);
+  text-wrap: wrap;
+}
+

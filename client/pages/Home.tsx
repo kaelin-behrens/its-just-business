@@ -7,6 +7,7 @@ import DnD from '../components/DragAndDrop/DnD'
 import Example from '../components/drag_and_drop/Example'
 import Timer from '../components/Timer'
 import WhackAMole from '../components/WhackAMole'
+import SpamPopup from '../components/SpamPopup'
 
 
 function Home() {
@@ -34,6 +35,7 @@ function Home() {
           </p>
           {/*//TODO replace with dynamic time */}
         </div>
+        <SpamPopup/>
         <div>
           {' '}
           <img src="../../public/logo.svg" alt="sad face"></img>
