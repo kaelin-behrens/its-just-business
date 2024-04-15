@@ -10,6 +10,7 @@ import WhackAMole from '../components/WhackAMole'
 
 import ChatBotPopup from '../components/SpamPopup'
 import CodeBreaker from '../components/CodeBreaker'
+import Eyes from '../components/Eyes/Eyes'
 
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
@@ -42,6 +43,7 @@ function Home() {
           alt="sad face"
         ></img>
       </div>
+      <Eyes />
       <div className="header">
         <div>
           <h1 className="title">Important Business Report</h1>
