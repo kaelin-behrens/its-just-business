@@ -1,30 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.userbanner {
+  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: sans-serif;
+  margin: 0%;
+  padding: 0%;
+  align-items: flex-start;
+  background-color: #1c2541;
+}
+
+.businesslogo {
+  display: inline-block;
+  max-width: 8%;
+  margin-top: -4%;
+}
+
+.usergreeting {
+  font-size: 100%;
+  font-weight: bold;
+  margin-left: 10%;
+  color: #5bc0be;
+}
+
+.timertext {
+  font-size: 100%;
+  color: #7d94af;
+  margin-right: 2%;
+}
+
 .header {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  text-align: center;
+  font-family: sans-serif;
 }
 
-.header > * {
-  margin-bottom: 20px;
-}
-
-.header h6 {
-  font-size: 18px;
+.title {
+  font-size: 160%;
   font-weight: bold;
+  margin-left: 6%;
 }
 
-.header p {
-  font-size: 16px;
-  color: #666;
-}
-
-.header h1 {
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 30px;
+.blandtext {
+  font-size: 90%;
+  color: #3a506b;
+  margin-left: 6%;
+  margin-right: 32%;
 }
 
 .body {
@@ -32,30 +58,32 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 200px);
   grid-gap: 80px;
-  /* CAE Changed for captcha display - may have to fix as puzzles added */
   row-gap: 600px;
   padding: 20px;
+  font-family: sans-serif;
 }
 
 .codebreaker,
 .captcha,
 .whackamole,
 .dragndrop {
-  background-color: #5bc0be;
+  /* background-color: #3a506b; */
   padding: 20px;
   border-radius: 8px;
   /* CAE Changed for captcha display - may have to fix as puzzles added */
   height: 600px;
-  color: #fff;
 }
 
 .codebreaker p,
 .captcha p,
-.whackamole p,
+.whackamole p {
+  width: 90%;
+}
 .dragndrop p {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
+  color: #3a506b;
 }
 
 .button {
