@@ -77,11 +77,6 @@ function Home() {
         <div className="codebreaker">
           <p>codebreaker</p>
           <CodeBreaker clues={clues} />
-          <CodeBreaker />
-          <img
-            src="../../public/stock photography 7.webp"
-            alt="group of people doing business"
-          />
         </div>
         <div className="captcha">
           <FormHP clues={clues} />
@@ -99,7 +94,6 @@ function Home() {
         </div>
         {showPopUp && <AuthPopup answer={answer} />}
       </div>
-      <ChatBotPopup />
       <ChatBotPopup />
     </>
   )
