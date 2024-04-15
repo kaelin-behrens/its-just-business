@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import AuthPopup from '../components/AuthPopup'
 import FormHP from '../components/FormHP'
+<<<<<<< HEAD
+import CodeBreaker from '../components/CodeBreaker'
+=======
 import { createPassword, splitPassword } from '../components/Password/password'
 
 import DnD from '../components/DragAndDrop/DnD'
@@ -8,6 +11,7 @@ import Example from '../components/drag_and_drop/Example'
 import Timer from '../components/Timer'
 import WhackAMole from '../components/WhackAMole'
 
+>>>>>>> 84e6a884c6dbcd55488cd0def0bd8612a36731f3
 
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
@@ -71,10 +75,15 @@ function Home() {
       <div className="body">
         <div className="codebreaker">
           <p>codebreaker</p>
+<<<<<<< HEAD
+          <CodeBreaker />
+          <img src="/" alt="group of people doing business" />
+=======
           <img
             src="../../public/stock photography 7.webp"
             alt="group of people doing business"
           />
+>>>>>>> 84e6a884c6dbcd55488cd0def0bd8612a36731f3
         </div>
         <div className="captcha">
           <p>captcha</p>
