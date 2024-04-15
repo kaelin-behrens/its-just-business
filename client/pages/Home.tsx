@@ -75,6 +75,8 @@ function Home() {
       </div>
       <div className="body">
         <div className="codebreaker">
+          <p>codebreaker</p>
+          <CodeBreaker clues={clues} />
           <CodeBreaker />
           <img
             src="../../public/stock photography 7.webp"
@@ -97,6 +99,7 @@ function Home() {
         </div>
         {showPopUp && <AuthPopup answer={answer} />}
       </div>
+      <ChatBotPopup />
       <ChatBotPopup />
     </>
   )
