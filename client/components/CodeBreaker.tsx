@@ -8,15 +8,29 @@ function CodeBreaker() {
   const [win, setWin] = useState(false)
 
   useEffect(() => {
-    generateRandomSequence()
+    initializeGame() // This initializes the game when the component mounts
   }, [])
 
-  function generateRandomSequence() {
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1))
+      ;[array[i], array[j]] = [array[j], array[i]] // Swap elements
+    }
+    return array
+  }
+
+  function initializeGame() {
     const numbers = Array.from({ length: 10 }, (_, index) => index)
-    numbers.sort(() => Math.random() - 0.5)
-    const correctNumbers = numbers.slice(0, 4)
-    setSequence(correctNumbers)
-    console.log('Correct numbers:', correctNumbers)
+    const shuffledNumbers = shuffleArray(numbers)
+    console.log('Shuffled numbers:', shuffledNumbers) // Log the full shuffled array
+    setSequence(shuffledNumbers.slice(0, 4))
+    console.log('Correct numbers:', shuffledNumbers.slice(0, 4)) // Log the selected correct numbers
+
+    // Reset other states for a new game
+    setSelectedNumbers(Array(10).fill(false))
+    setAttemptCount(0)
+    setGameOver(false)
+    setWin(false)
   }
 
   function handleNumberClick(index: number) {
@@ -38,11 +52,7 @@ function CodeBreaker() {
   }
 
   function resetGame() {
-    setSelectedNumbers(Array(10).fill(false))
-    setAttemptCount(0)
-    generateRandomSequence()
-    setGameOver(false)
-    setWin(false)
+    initializeGame()
   }
 
   function getNumberColor(index: number) {
