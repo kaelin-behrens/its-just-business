@@ -92,17 +92,31 @@
 
 /* CHATBOT CSS */
 .chatbot {
+  position: sticky;
+  bottom: -10px;
   background-color: #1C2541;
   -webkit-text-fill-color: rgb(255, 255, 255);
   height: fit-content;
   padding-top: 10px;
   padding-bottom: 10px;
   font-family: sans-serif;
+  width: 300px;
+}
+
+.chatBotHeader {
+  display: flex;
+  justify-content: space-around;
 }
 
 .chatbot input,button {
   margin-top: 10px;
   -webkit-text-fill-color: rgb(0, 0, 0);
+}
+
+.chatbot button {
+  all: unset;
+  position: relative;
+  bottom: 50%
 }
 
 .chatlog {
