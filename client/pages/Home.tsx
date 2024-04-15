@@ -8,8 +8,9 @@ import DnD from '../components/DragAndDrop/DnD'
 import Timer from '../components/Timer'
 import WhackAMole from '../components/WhackAMole'
 
-import ChatBotPopup from '../components/SpamPopup'
+import ChatBotPopup from '../components/ChatBotPopup'
 import CodeBreaker from '../components/CodeBreaker'
+import Survey from '../components/Survey'
 
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
@@ -25,6 +26,7 @@ function Home() {
 
   return (
     <>
+    <Survey/>
       <div className="userbanner">
         <p className="usergreeting">
           Welcome back User93748GB57, work hours have commenced.

@@ -61,6 +61,7 @@ body {
   row-gap: 600px;
   padding: 20px;
   font-family: sans-serif;
+  z-index: 0;
 }
 .whackamole {
   width: 80%;
@@ -117,4 +118,50 @@ textarea {
 
 .button:hover {
   background-color: #3a506b;
+}
+
+
+
+/* CAE wrote for survey popup */
+
+.survey-popup {
+  border-radius: 8px;
+  font-family: sans-serif;
+  /* border: #0b132b 2px solid; */
+  background: #ffffff;
+  z-index: 20;
+  position: fixed;
+  content: "";
+  margin: 15%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 2px 1px rgba(50, 50, 50, 0.2);
+}
+
+.survey-cover {
+  background: #3a506bc0;
+  z-index: 10;
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.impossible-button {
+  visibility: hidden;
+}
+
+.survey-button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-left: 35%;
+  margin-right: 35%;
 }
