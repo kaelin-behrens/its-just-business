@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import AuthPopup from '../components/AuthPopup'
 import FormHP from '../components/FormHP'
+
 import { createPassword, splitPassword } from '../components/Password/password'
 
 import DnD from '../components/DragAndDrop/DnD'
 import Example from '../components/drag_and_drop/Example'
 import Timer from '../components/Timer'
 import WhackAMole from '../components/WhackAMole'
-
+import CodeBreaker from '../components/CodeBreaker'
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
   function handleSubmit() {
@@ -73,6 +74,7 @@ function Home() {
       <div className="body">
         <div className="codebreaker">
           <p>codebreaker</p>
+          <CodeBreaker />
           <img
             src="../../public/stock photography 7.webp"
             alt="group of people doing business"
