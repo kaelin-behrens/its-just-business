@@ -9,3 +9,9 @@ export function shuffle(array) {
     }
     return array
   }
+
+
+  export function random(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+  }
+  

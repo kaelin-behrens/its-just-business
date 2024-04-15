@@ -1,13 +1,30 @@
 import { useState } from 'react'
 import AuthPopup from '../components/AuthPopup'
 import FormHP from '../components/FormHP'
+<<<<<<< HEAD
 import CodeBreaker from '../components/CodeBreaker'
+=======
+import { createPassword, splitPassword } from '../components/Password/password'
+
+import DnD from '../components/DragAndDrop/DnD'
+import Example from '../components/drag_and_drop/Example'
+import Timer from '../components/Timer'
+import WhackAMole from '../components/WhackAMole'
+
+>>>>>>> 84e6a884c6dbcd55488cd0def0bd8612a36731f3
 
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
   function handleSubmit() {
     setShowPopUP(!showPopUp)
   }
+
+  // console log pw for testing purposes
+  const [answer, setAnswer] = useState(String(createPassword()))
+  console.log(answer)
+  const [clues, setClues] = useState(splitPassword(answer))
+  // console.log(clues)
+
   return (
     <>
       <div className="header">
@@ -16,8 +33,14 @@ function Home() {
             Welcome back User93748GB57, we so value your work here, are you
             ready to get stuck in?
           </h6>
-          <p>This report is due at 5pm</p>{' '}
+          <p>
+            This report is due in <Timer />
+          </p>
           {/*//TODO replace with dynamic time */}
+        </div>
+        <div>
+          {' '}
+          <img src="../../public/logo.svg" alt="sad face"></img>
         </div>
         <div>
           <h1>Importnant Business Report</h1>
@@ -52,21 +75,30 @@ function Home() {
       <div className="body">
         <div className="codebreaker">
           <p>codebreaker</p>
+<<<<<<< HEAD
           <CodeBreaker />
           <img src="/" alt="group of people doing business" />
+=======
+          <img
+            src="../../public/stock photography 7.webp"
+            alt="group of people doing business"
+          />
+>>>>>>> 84e6a884c6dbcd55488cd0def0bd8612a36731f3
         </div>
         <div className="captcha">
           <p>captcha</p>
-          <FormHP />
+          <FormHP clues={clues} />
         </div>
         <div className="whackamole">
           <p>whackamole</p>
+          <WhackAMole clues={clues} />
         </div>
         <div className="dragndrop">
           <p>dragndrop</p>
+          <DnD clues={clues} />
         </div>
         <button onClick={handleSubmit}>Submit</button>
-        {showPopUp && <AuthPopup />}
+        {showPopUp && <AuthPopup answer={answer} />}
       </div>
     </>
   )
