@@ -1,19 +1,16 @@
 .graphBg {
-  background-image: url('/public/graphBg.png'); /*TODO: replace image with more tecnical graph (in colour scheme)*/
-  background-repeat: no-repeat;
+  /* background-image: url('/public/graphBg.png'); /*TODO: replace image with more tecnical graph (in colour scheme)*/
+  /*background-repeat: no-repeat; */
   background-color: #ffffff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-top: 5px;
+  padding-bottom: 10%;
 }
 
-.graphTitle {
+/* .graphTitle {
   color: #1c2541ff;
   padding-left: 60px;
-}
-
-h1 {
-  color: #1c2541ff;
-}
+} */

@@ -50,7 +50,7 @@ export default function DnD(props) {
   return (
     <div className="graphBg">
       {win && <h1>Password clue: {fragment}</h1>}
-      <p className="graphTitle">Welcome to quarterly productivity profits</p>
+      <p className="glitch">Welcome to quarterly productivity profits</p>
       <DndContext
         sensors={sensors}
         collisionDetection={closestCorners}

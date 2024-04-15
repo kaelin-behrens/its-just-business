@@ -8,7 +8,6 @@ import Example from '../components/drag_and_drop/Example'
 import Timer from '../components/Timer'
 import WhackAMole from '../components/WhackAMole'
 
-
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
   function handleSubmit() {
