@@ -14,7 +14,7 @@ import './DnD.css'
 
 export default function DnD(props) {
   const fragment = props.clues[3]
-  const correctOrder = [1, 5, 2, 4, 3]
+  const correctOrder = [1, 5, 2, 4, 3] //TODO make dynamic
   const [win, setWin] = useState(false)
   const [bars, setBars] = useState([
     { id: 1, title: 'barOne' },
@@ -57,19 +57,25 @@ export default function DnD(props) {
   return (
     <div className="graphBg">
       {win && <h1>Password clue: {fragment}</h1>}
-      <p className="glitch title">
+      <p className="glitch Graphtitle">
         Layoffs of Workers vs{' '}
         <button onClick={handleClick} className="remove title">
           {title}
         </button>
       </p>
-      <DndContext
-        sensors={sensors}
-        collisionDetection={closestCorners}
-        onDragEnd={handleDragEnd}
-      >
-        <Graph id="toDo" bars={bars} />
-      </DndContext>
+
+      <div className="row">
+        <p className="xaxis">Quarterly Layoffs</p>
+        <div className="elementTwo">
+          <DndContext
+            sensors={sensors}
+            collisionDetection={closestCorners}
+            onDragEnd={handleDragEnd}
+          >
+            <Graph id="toDo" bars={bars} />
+          </DndContext>
+        </div>
+      </div>
       <p onClick={handleClick} className="yaxis">
         {duplicate}
       </p>

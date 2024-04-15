@@ -7,18 +7,30 @@
   flex-direction: column;
   gap: 10px;
   margin-top: 5px;
-  padding-bottom: 10%;
+  padding: 5%;
+  background-color: bisque;
 }
 
-.title {
-  color: rgb(105, 126, 189);
+.Graphtitle {
+  color: #0b132bff;
   padding-left: 10%;
   text-decoration: underline;
   text-underline-position: below;
 }
+.xaxis {
+  padding-left: 1%;
+  transform: rotate(-90deg);
+}
 
 .yaxis {
   padding-left: 30%;
+}
+
+.row {
+  display: flex;
+}
+.elementTwo {
+  width: 100%;
 }
 
 .remove {
@@ -30,7 +42,7 @@
   font: inherit;
   border-radius: 0;
   appearance: none;
-  color: rgb(214, 95, 31);
+  color: #0b132bff;
   text-decoration: underline;
   text-underline-position: below;
 }
