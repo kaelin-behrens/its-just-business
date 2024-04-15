@@ -1,12 +1,15 @@
 import { useState } from 'react'
 import AuthPopup from '../components/AuthPopup'
 import FormHP from '../components/FormHP'
+
 import { createPassword, splitPassword } from '../components/Password/password'
 
 import DnD from '../components/DragAndDrop/DnD'
-import Example from '../components/drag_and_drop/Example'
 import Timer from '../components/Timer'
 import WhackAMole from '../components/WhackAMole'
+
+import ChatBotPopup from '../components/SpamPopup'
+import CodeBreaker from '../components/CodeBreaker'
 
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
@@ -22,24 +25,27 @@ function Home() {
 
   return (
     <>
+      <div className="userbanner">
+        <p className="usergreeting">
+          Welcome back User93748GB57, work hours have commenced.
+        </p>
+
+        <p className="timertext">
+          This report is due in <Timer />
+        </p>
+        {/*//TODO replace with dynamic time */}
+      </div>
+      <div>
+        <img
+          className="businesslogo"
+          src="../../public/logo.svg"
+          alt="sad face"
+        ></img>
+      </div>
       <div className="header">
         <div>
-          <h6>
-            Welcome back User93748GB57, we so value your work here, are you
-            ready to get stuck in?
-          </h6>
-          <p>
-            This report is due in <Timer />
-          </p>
-          {/*//TODO replace with dynamic time */}
-        </div>
-        <div>
-          {' '}
-          <img src="../../public/logo.svg" alt="sad face"></img>
-        </div>
-        <div>
-          <h1>Importnant Business Report</h1>
-          <p>
+          <h1 className="title">Important Business Report</h1>
+          <p className="blandtext">
             In todays dynamic marketplace, companies must leverage synergistic
             strategies to maximize their competitive advantage. It is imperative
             to think outside the box and cultivate a robust ecosystem of
@@ -52,7 +58,7 @@ function Home() {
             in this hyperconnected landscape.
           </p>
 
-          <p>
+          {/* <p className="blandtext">
             Moreover, proactive stakeholder engagement is paramount in
             navigating the complexities of global markets. By conducting
             comprehensive market analyses and harnessing actionable insights,
@@ -64,12 +70,13 @@ function Home() {
             continuously refine their value propositions and adapt to evolving
             consumer demands, ensuring long-term viability and resilience in an
             ever-evolving business landscape.
-          </p>
+          </p> */}
         </div>
       </div>
       <div className="body">
         <div className="codebreaker">
           <p>codebreaker</p>
+          <CodeBreaker />
           <img
             src="../../public/stock photography 7.webp"
             alt="group of people doing business"
@@ -90,6 +97,7 @@ function Home() {
         <button onClick={handleSubmit}>Submit</button>
         {showPopUp && <AuthPopup answer={answer} />}
       </div>
+      <ChatBotPopup />
     </>
   )
 }
