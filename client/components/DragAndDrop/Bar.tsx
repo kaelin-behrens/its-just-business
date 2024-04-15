@@ -18,7 +18,7 @@ export const Bar = ({ id, title }) => {
       style={style}
       {...attributes}
       {...listeners}
-      className="bar"
+      className="bar "
       id={title}
     >
       <p>{title}</p>
