@@ -17,11 +17,6 @@ export const Graph = ({ bars }) => {
           <Bar key={bar.id} id={bar.id} title={bar.title} />
         ))}
       </SortableContext>
-      {duplicate.map((title) => (
-        <button className="yTitle" onClick={handleClick} key={title}>
-          {title}
-        </button>
-      ))}
     </div>
   )
 }

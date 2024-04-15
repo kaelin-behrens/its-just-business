@@ -11,10 +11,14 @@
 }
 
 .title {
-  color: #1c2541ff;
+  color: rgb(105, 126, 189);
   padding-left: 10%;
   text-decoration: underline;
   text-underline-position: below;
+}
+
+.yaxis {
+  padding-left: 30%;
 }
 
 .remove {
@@ -26,7 +30,7 @@
   font: inherit;
   border-radius: 0;
   appearance: none;
-  color: #1c2541ff;
+  color: rgb(214, 95, 31);
   text-decoration: underline;
   text-underline-position: below;
 }

@@ -14,7 +14,7 @@ import './DnD.css'
 
 export default function DnD(props) {
   const fragment = props.clues[3]
-  const correctOrder = [5, 2, 1, 4, 3]
+  const correctOrder = [1, 5, 2, 4, 3]
   const [win, setWin] = useState(false)
   const [bars, setBars] = useState([
     { id: 1, title: 'barOne' },
@@ -24,9 +24,11 @@ export default function DnD(props) {
     { id: 5, title: 'barFive' },
   ])
 
-  const [duplicate, setDuplicate] = useState(['Profits'])
+  const [duplicate, setDuplicate] = useState(['Total Company Profits'])
+  const [title, setTitile] = useState(['Profits'])
   const handleClick = () => {
     setDuplicate([...duplicate, 'Profits'])
+    setTitile([...title, 'here at company, we value your contribution'])
   }
 
   const sensors = useSensors(useSensor(PointerSensor))
@@ -57,8 +59,8 @@ export default function DnD(props) {
       {win && <h1>Password clue: {fragment}</h1>}
       <p className="glitch title">
         Layoffs of Workers vs{' '}
-        <button onClick={handleClick} className="remove">
-          {duplicate}
+        <button onClick={handleClick} className="remove title">
+          {title}
         </button>
       </p>
       <DndContext
@@ -68,7 +70,7 @@ export default function DnD(props) {
       >
         <Graph id="toDo" bars={bars} />
       </DndContext>
-      <p onClick={handleClick} className="y-title">
+      <p onClick={handleClick} className="yaxis">
         {duplicate}
       </p>
     </div>

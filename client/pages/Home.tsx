@@ -49,13 +49,15 @@ function Home() {
             In todays dynamic marketplace, companies must leverage synergistic
             strategies to maximize their competitive advantage. It is imperative
             to think outside the box and cultivate a robust ecosystem of
-            innovation, fostering a culture of disruption and agility. By
-            aligning key performance indicators with overarching business
-            objectives, organizations can optimize operational efficiencies and
-            drive sustainable growth. Leveraging cutting-edge technologies such
-            as artificial intelligence and blockchain, businesses can streamline
-            processes, enhance customer experiences, and stay ahead of the curve
-            in this hyperconnected landscape.
+            innovation, fostering a culture of disruption and agility. In the
+            past quater, we have laid off 1,5243 staff. By aligning key
+            performance indicators with overarching business objectives,
+            organizations can optimize operational efficiencies and drive
+            sustainable growth. Our profitprofits have increased by 179%.
+            Leveraging cutting-edge technologies such as artificial intelligence
+            and blockchain, businesses can streamline processes, enhance
+            customer experiences, and stay ahead of the curve in this
+            hyperconnected landscape.
           </p>
 
           {/* <p className="blandtext">
