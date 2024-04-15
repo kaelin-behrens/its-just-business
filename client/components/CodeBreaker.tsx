@@ -1,15 +1,21 @@
 import { useState, useEffect } from 'react'
 
-function CodeBreaker() {
+function CodeBreaker(props) {
   const [sequence, setSequence] = useState([])
   const [selectedNumbers, setSelectedNumbers] = useState(Array(10).fill(false))
   const [attemptCount, setAttemptCount] = useState(0)
   const [gameOver, setGameOver] = useState(false)
   const [win, setWin] = useState(false)
+  const [image, setImage] = useState(true)
+  const fragment = props.clues[0]
 
   useEffect(() => {
     initializeGame() // This initializes the game when the component mounts
   }, [])
+
+  function img() {
+    setImage(false)
+  }
 
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -57,48 +63,67 @@ function CodeBreaker() {
 
   function getNumberColor(index: number) {
     if (!selectedNumbers[index]) {
-      return 'black'
+      return '#CCD6E3'
     }
     return sequence.includes(index) ? 'green' : 'red'
   }
 
   return (
     <>
-      <h2>Click the numbers to solve the puzzle</h2>
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {Array.from({ length: 10 }).map((_, index) => (
-          <button
-            key={index}
-            style={{
-              width: '50px',
-              height: '50px',
-              margin: '5px',
-              backgroundColor: getNumberColor(index),
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              cursor: gameOver ? 'default' : 'pointer',
-              color: 'white',
-            }}
-            onClick={() => handleNumberClick(index)}
-            disabled={gameOver || selectedNumbers[index]}
-          >
-            {index}
-          </button>
-        ))}
-      </div>
-      {gameOver && (
+      {' '}
+      {image && (
+        <button onClick={img}>
+          {' '}
+          <img
+            src="../../public/stock photography 7.webp"
+            alt="group of people doing business"
+          />
+        </button>
+      )}
+      {!image && (
         <>
-          <div
-            style={{ marginTop: '20px', fontWeight: 'bold', fontSize: '18px' }}
-          >
-            {win
-              ? 'Congratulations! You have completed the puzzle!'
-              : 'Game Over! Try again.'}
+          <h2>Click the numbers to solve the puzzle</h2>
+          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+            {Array.from({ length: 10 }).map((_, index) => (
+              <button
+                key={index}
+                style={{
+                  width: '50px',
+                  height: '50px',
+                  margin: '5px',
+                  backgroundColor: getNumberColor(index),
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  cursor: gameOver ? 'default' : 'pointer',
+                  WebkitTextStrokeColor: 'white',
+                }}
+                onClick={() => handleNumberClick(index)}
+                disabled={gameOver || selectedNumbers[index]}
+              >
+                {index}
+              </button>
+            ))}
           </div>
-          <button onClick={resetGame} style={{ marginTop: '10px' }}>
-            Restart Game
-          </button>
+          {gameOver && (
+            <>
+              <div
+                style={{
+                  marginTop: '20px',
+                  fontWeight: 'bold',
+                  fontSize: '18px',
+                }}
+              >
+                {win && <p>Password clue: {fragment}</p>}
+                {win
+                  ? 'Congratulations! You have completed the puzzle!'
+                  : 'Game Over! Try again.'}
+              </div>
+              <button onClick={resetGame} style={{ marginTop: '10px' }}>
+                Restart Game
+              </button>
+            </>
+          )}{' '}
         </>
       )}
     </>
