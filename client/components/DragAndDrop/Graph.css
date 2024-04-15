@@ -4,6 +4,9 @@
   flex-direction: column;
   gap: 15px;
   margin-left: 64px;
+  background-color: rgba(28, 37, 65, 0.133);
+  border-style: none none solid solid;
+  border-color: #1c2541ff;
 }
 
 .yTitle {

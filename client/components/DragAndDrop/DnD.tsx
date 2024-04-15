@@ -24,6 +24,11 @@ export default function DnD(props) {
     { id: 5, title: 'barFive' },
   ])
 
+  const [duplicate, setDuplicate] = useState(['Profits'])
+  const handleClick = () => {
+    setDuplicate([...duplicate, 'Profits'])
+  }
+
   const sensors = useSensors(useSensor(PointerSensor))
 
   const getBarPos = (id) => bars.findIndex((bar) => bar.id === id)
@@ -50,7 +55,12 @@ export default function DnD(props) {
   return (
     <div className="graphBg">
       {win && <h1>Password clue: {fragment}</h1>}
-      <p className="glitch">Welcome to quarterly productivity profits</p>
+      <p className="glitch title">
+        Layoffs of Workers vs{' '}
+        <button onClick={handleClick} className="remove">
+          {duplicate}
+        </button>
+      </p>
       <DndContext
         sensors={sensors}
         collisionDetection={closestCorners}
@@ -58,6 +68,9 @@ export default function DnD(props) {
       >
         <Graph id="toDo" bars={bars} />
       </DndContext>
+      <p onClick={handleClick} className="y-title">
+        {duplicate}
+      </p>
     </div>
   )
 }
