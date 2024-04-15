@@ -1,4 +1,48 @@
-.eyes-follow-tired {
+.eyes-container {
+  display: flex;
+}
+
+.eye {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+  border: 2px solid black;
+  position: relative;
+  margin: 20px;
+}
+
+.pupil {
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.eyelid {
+  position: absolute;
+  width: 220px;
+  height: 100px;
+  background-color: white;
+  z-index: 400;
+  top: -120px;
+  animation: blink 4.5s infinite ease-in alternate;
+  animation-delay: 1s;
+}
+@keyframes blink {
+  0% {
+    top: -120px;
+  }
+  95% {
+    top: -120px;
+  }
+  100% {
+    top: -50px;
+  }
+}
+
+/* .eyes-follow-tired {
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
@@ -79,4 +123,4 @@
       transform: scale(1.3);
     }
   }
-}
+} */
