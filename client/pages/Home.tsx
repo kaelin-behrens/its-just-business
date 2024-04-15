@@ -78,11 +78,7 @@ function Home() {
       <div className="body">
         <div className="codebreaker">
           <p>codebreaker</p>
-          <CodeBreaker />
-          <img
-            src="../../public/stock photography 7.webp"
-            alt="group of people doing business"
-          />
+          <CodeBreaker clues={clues} />
         </div>
         <div className="captcha">
           <p>captcha</p>
