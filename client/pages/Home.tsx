@@ -5,10 +5,12 @@ import FormHP from '../components/FormHP'
 import { createPassword, splitPassword } from '../components/Password/password'
 
 import DnD from '../components/DragAndDrop/DnD'
-import Example from '../components/drag_and_drop/Example'
 import Timer from '../components/Timer'
 import WhackAMole from '../components/WhackAMole'
+
+import ChatBotPopup from '../components/SpamPopup'
 import CodeBreaker from '../components/CodeBreaker'
+
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
   function handleSubmit() {
@@ -95,6 +97,7 @@ function Home() {
         <button onClick={handleSubmit}>Submit</button>
         {showPopUp && <AuthPopup answer={answer} />}
       </div>
+      <ChatBotPopup/>
     </>
   )
 }
