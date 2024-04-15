@@ -77,22 +77,29 @@ function Home() {
         <div className="codebreaker">
           <p>codebreaker</p>
           <CodeBreaker clues={clues} />
+          <CodeBreaker />
+          <img
+            src="../../public/stock photography 7.webp"
+            alt="group of people doing business"
+          />
         </div>
         <div className="captcha">
-          <p>captcha</p>
           <FormHP clues={clues} />
         </div>
         <div className="whackamole">
-          <p>whackamole</p>
           <WhackAMole clues={clues} />
         </div>
         <div className="dragndrop">
-          <p>dragndrop</p>
           <DnD clues={clues} />
         </div>
-        <button onClick={handleSubmit}>Submit</button>
+        <div>
+          <button className="button" onClick={handleSubmit}>
+            Submit
+          </button>
+        </div>
         {showPopUp && <AuthPopup answer={answer} />}
       </div>
+      <ChatBotPopup />
       <ChatBotPopup />
     </>
   )
