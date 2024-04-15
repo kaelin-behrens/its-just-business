@@ -43,7 +43,6 @@ function Home() {
           alt="sad face"
         ></img>
       </div>
-      <Eyes />
       <div className="header">
         <div>
           <h1 className="title">Important Business Report</h1>
@@ -79,7 +78,6 @@ function Home() {
       </div>
       <div className="body">
         <div className="codebreaker">
-          <p>codebreaker</p>
           <CodeBreaker clues={clues} />
         </div>
         <div className="captcha">
@@ -98,6 +96,7 @@ function Home() {
         </div>
         {showPopUp && <AuthPopup answer={answer} />}
       </div>
+
       <ChatBotPopup />
     </>
   )
