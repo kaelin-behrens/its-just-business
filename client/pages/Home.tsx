@@ -14,6 +14,7 @@ import Eyes from '../components/Eyes/Eyes'
 import Survey from '../components/Survey'
 import Cross from '../components/Cross'
 
+
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
   function handleSubmit() {
