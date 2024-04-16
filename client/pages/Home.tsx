@@ -30,14 +30,20 @@ function Home() {
 
   return (
     <>
-    {surveyTime && !complete && <Survey current={complete} new={setComplete}/>}
+      {surveyTime && !complete && (
+        <Survey current={complete} new={setComplete} />
+      )}
       <div className="userbanner">
         <p className="usergreeting">
           Welcome back User93748GB57, work hours have commenced.
         </p>
 
         <p className="timertext">
-          This report is due in <Timer currentSurveyState={surveyTime} newSurveyState={setSurveyTime} />
+          This report is due in{' '}
+          <Timer
+            currentSurveyState={surveyTime}
+            newSurveyState={setSurveyTime}
+          />
         </p>
         {/*//TODO replace with dynamic time */}
       </div>
@@ -45,7 +51,7 @@ function Home() {
         <img
           className="businesslogo"
           src="../../public/logo.svg"
-          alt="sad face"
+          alt="logo"
         ></img>
       </div>
       <div className="header">
@@ -95,7 +101,7 @@ function Home() {
           <DnD clues={clues} />
         </div>
         <div>
-          <button className="button" onClick={handleSubmit}>
+          <button className="button" onClick={handleSubmit} id="submitBtn">
             Submit
           </button>
         </div>
