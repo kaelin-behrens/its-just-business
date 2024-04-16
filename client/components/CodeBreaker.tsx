@@ -72,9 +72,10 @@ function CodeBreaker(props) {
     <>
       {' '}
       {image && (
-        <button onClick={img}>
+        <button className="fakeimagebutton" onClick={img}>
           {' '}
           <img
+            className="fakeimage"
             src="../../public/stock photography 7.webp"
             alt="group of people doing business"
           />

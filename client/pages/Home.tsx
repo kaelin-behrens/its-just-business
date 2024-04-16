@@ -77,7 +77,6 @@ function Home() {
       </div>
       <div className="body">
         <div className="codebreaker">
-          <p>codebreaker</p>
           <CodeBreaker clues={clues} />
         </div>
         <div className="captcha">
@@ -90,7 +89,7 @@ function Home() {
           <DnD clues={clues} />
         </div>
         <div>
-          <button className="button" onClick={handleSubmit}>
+          <button className="finalbutton" onClick={handleSubmit}>
             Submit
           </button>
         </div>
