@@ -87,6 +87,7 @@ function Home() {
           </p> */}
         </div>
       </div>
+
       <div className="body">
         <div className="codebreaker">
           <CodeBreaker clues={clues} />
