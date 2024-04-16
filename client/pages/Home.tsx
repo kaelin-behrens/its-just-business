@@ -13,6 +13,7 @@ import CodeBreaker from '../components/CodeBreaker'
 import Eyes from '../components/Eyes/Eyes'
 import Survey from '../components/Survey'
 
+
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
   function handleSubmit() {
