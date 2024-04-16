@@ -10,6 +10,7 @@ import WhackAMole from '../components/WhackAMole'
 
 import ChatBotPopup from '../components/SpamPopup'
 import CodeBreaker from '../components/CodeBreaker'
+import Eyes from '../components/Eyes/Eyes'
 
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
@@ -77,7 +78,6 @@ function Home() {
       </div>
       <div className="body">
         <div className="codebreaker">
-          <p>codebreaker</p>
           <CodeBreaker clues={clues} />
         </div>
         <div className="captcha">
@@ -96,6 +96,7 @@ function Home() {
         </div>
         {showPopUp && <AuthPopup answer={answer} />}
       </div>
+
       <ChatBotPopup />
     </>
   )

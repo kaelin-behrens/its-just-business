@@ -33,6 +33,7 @@
     "interactjs": "^1.10.27",
     "knex": "^2.5.1",
     "random-words": "^2.0.1",
+    "react-hook-mighty-mouse": "^1.4.31",
     "sqlite3": "^5.1.6",
     "superagent": "^8.1.2"
   },
