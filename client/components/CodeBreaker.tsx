@@ -125,9 +125,9 @@ function CodeBreaker(props){
     {!image && !win && <>
     {numbers.map((item, index) => <button key={index} value={item} className={red.includes(item) ? "codered" : yellow.includes(item) ? "codeyellow" : green.includes(item) ? "codegreen" : "nope"} onClick={handleNumberClick}>{item}</button>)}
     <h3>{selectedNumbers.map((item, index) => <span key={index}> {item} </span>)}</h3>
-    <h1>Red {red.map((item, index) => <span key={index}> {item} </span>)}</h1>
+    {/* <h1>Red {red.map((item, index) => <span key={index}> {item} </span>)}</h1>
     <h1>Yellow {yellow.map((item, index) => <span key={index}> {item} </span>)}</h1>
-    <h1>Green {green.map((item, index) => <span key={index}> {item} </span>)}</h1> 
+    <h1>Green {green.map((item, index) => <span key={index}> {item} </span>)}</h1>  */}
     </>}
     {win && <p>Password clue: {fragment}</p>}
     </>
