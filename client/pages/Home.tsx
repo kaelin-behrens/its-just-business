@@ -12,6 +12,7 @@ import ChatBotPopup from '../components/ChatBotPopup'
 import CodeBreaker from '../components/CodeBreaker'
 import Eyes from '../components/Eyes/Eyes'
 import Survey from '../components/Survey'
+import ColorCaptcha from '../components/CaptchaPuzzle/ColorCaptcha'
 
 
 function Home() {
@@ -108,6 +109,7 @@ function Home() {
         </div>
         {showPopUp && <AuthPopup answer={answer} />}
       </div>
+      <ColorCaptcha/>
 
       <ChatBotPopup />
     </>
