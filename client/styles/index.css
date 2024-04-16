@@ -87,8 +87,8 @@ body {
 .body {
   font-family: sans-serif;
   display: grid;
-  grid-template-columns: repeat(2, 50%);
-  grid-template-rows: repeat(2, 50%);
+  grid-template-columns: repeat(3, 50%);
+  grid-template-rows: repeat(3, 50%);
   grid-gap: 0%;
   row-gap: 10%;
   justify-items: center;
@@ -98,8 +98,8 @@ body {
 }
 
 .fakeimagebutton {
-  height: 60%;
-  width: 60%;
+  height: 80%;
+  width: 80%;
   border: none;
   background-color: transparent;
   outline: none;
