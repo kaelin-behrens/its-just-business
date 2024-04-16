@@ -1,19 +1,48 @@
 .graphBg {
-  background-image: url('/public/graphBg.png'); /*TODO: replace image with more tecnical graph (in colour scheme)*/
-  background-repeat: no-repeat;
-  background-color: #ffffff;
+  /* background-image: url('/public/graphBg.png'); /*TODO: replace image with more tecnical graph (in colour scheme)*/
+  /*background-repeat: no-repeat; */
+
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-top: 5px;
+  padding: 5%;
+  background-color: bisque;
 }
 
-.graphTitle {
-  color: #1c2541ff;
-  padding-left: 60px;
+.Graphtitle {
+  color: #0b132bff;
+  padding-left: 10%;
+  text-decoration: underline;
+  text-underline-position: below;
+}
+.xaxis {
+  padding-left: 1%;
+  transform: rotate(-90deg);
 }
 
-h1 {
-  color: #1c2541ff;
+.yaxis {
+  padding-left: 30%;
+}
+
+.row {
+  display: flex;
+}
+.elementTwo {
+  width: 100%;
+}
+
+.remove {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+  font: inherit;
+  border-radius: 0;
+  appearance: none;
+  color: #0b132bff;
+  text-decoration: underline;
+  text-underline-position: below;
 }

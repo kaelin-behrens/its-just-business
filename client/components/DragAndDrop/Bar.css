@@ -10,3 +10,36 @@
 p {
   color: #1c2541ff;
 }
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+/* ...and then apply it: */
+/* .bar {
+  animation: slide-in 1000ms;
+} */
+
+.spam {
+  animation: slide 1s;
+}
+
+@keyframes spam {
+  0% {
+    position: relative;
+    left: 0;
+  }
+  50% {
+    position: relative;
+    left: 70px;
+  }
+  100% {
+    position: relative;
+    left: 0px;
+  }
+}
