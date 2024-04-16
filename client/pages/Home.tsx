@@ -12,6 +12,7 @@ import ChatBotPopup from '../components/ChatBotPopup'
 import CodeBreaker from '../components/CodeBreaker'
 import Eyes from '../components/Eyes/Eyes'
 import Survey from '../components/Survey'
+import Cross from '../components/Cross'
 
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
@@ -87,6 +88,7 @@ function Home() {
           </p> */}
         </div>
       </div>
+      <Cross />
       <div className="body">
         <div className="codebreaker">
           <CodeBreaker clues={clues} />
