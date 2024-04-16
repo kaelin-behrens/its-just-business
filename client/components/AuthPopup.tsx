@@ -24,7 +24,7 @@ function AuthPopup(props) {
 
   return (
     // Temporary inline styling for the purposes of viewing and manually testing components
-    <div>
+    <div className="authpopup">
       <p>fake Auth Popup</p>
       <form onSubmit={handleSubmit}>
         <input type="password" value={password} onChange={handleChange}></input>

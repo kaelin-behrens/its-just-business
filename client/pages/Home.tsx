@@ -88,7 +88,7 @@ function Home() {
         <div className="dragndrop">
           <DnD clues={clues} />
         </div>
-        <div>
+        <div className="finalbutton">
           <button className="finalbutton" onClick={handleSubmit}>
             Submit
           </button>

@@ -1,13 +1,15 @@
 body {
   margin: 0;
   padding: 0;
-
+  font-family: sans-serif;
   background: rgb(98, 137, 185);
   background: linear-gradient(
     0deg,
     rgba(98, 137, 185, 0.7959384437368697) 0%,
     rgba(255, 255, 255, 0.8799720571822479) 100%
   );
+  display: flex;
+  justify-content: center;
 }
 
 .userbanner {
@@ -131,7 +133,7 @@ textarea {
   background-color: #0e8af01a;
   border-radius: 15px;
   width: 80%;
-  height: 50%;
+  height: 80%;
   box-sizing: border-box;
   padding: 5%;
 }
@@ -157,17 +159,16 @@ textarea {
   background-color: #3a506b;
 }
 
-.finalbutton {
+.authpopup {
   display: flex;
   justify-content: center;
-  background-color: #0b132b;
+  background-color: #0e8af01a;
+  border-radius: 15px;
+}
+.finalbutton {
   color: #5bc0be;
   border: none;
   border-radius: 15px;
-  padding: 1% 2%;
-  font-size: 50%px;
+  font-size: 100%;
   cursor: pointer;
-}
-
-footer {
 }
