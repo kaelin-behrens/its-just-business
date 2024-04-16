@@ -1,85 +1,28 @@
-/* body {
-  overflow: hidden;
-}
-
-#info {
-  pointer-events: none;
-  user-select: none;
-  padding: 10px;
-} */
-
-/* .eyes-container {
-  display: flex;
-}
-
-.eye {
-  width: 50px;
-  height: 30px;
-  background-color: white;
-  border-radius: 50%;
-  border: 2px solid black;
-  position: relative;
-  margin: 20px;
-}
-
-.pupil {
-  width: 10px;
-  height: 10px;
-  background-color: black;
-  border-radius: 50%;
-  position: absolute;
-}
-
-.eyelid {
-  position: absolute;
-  width: 220px;
-  height: 100px;
-  background-color: white;
-  z-index: 400;
-  top: -120px;
-  animation: blink 4.5s infinite ease-in alternate;
-  animation-delay: 1s;
-}
-@keyframes blink {
-  0% {
-    top: -120px;
-  }
-  95% {
-    top: -120px;
-  }
-  100% {
-    top: -50px;
-  }
-} */
 .eyes-follow {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 50vh;
-
-  .eyes {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    .eye {
-      border-radius: 50%;
-      height: 40px;
-      width: 40px;
-      background: #f3efef;
-
-      .pupil {
-        background: #382e25;
-        border-radius: 50%;
-        position: absolute;
-        width: 15px;
-        height: 15px;
-        left: 25px;
-        top: 12px;
-      }
-    }
-  }
+}
+.eyes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.eye {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  background: #f3efef;
+  margin-left: 20px;
+}
+.pupil {
+  background: #0b132bff;
+  border-radius: 50%;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 25px;
+  top: 12px;
 }

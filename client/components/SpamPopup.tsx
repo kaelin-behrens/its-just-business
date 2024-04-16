@@ -52,7 +52,9 @@ const thirdLength = data[2].length
 function ChatBotPopup() {
   const defaultText = ''
   const [chatText, setChatText] = useState(defaultText)
-  const [chatLog, setChatLog] = useState(['Hello! How can I help you today?'])
+  const [chatLog, setChatLog] = useState([
+    'Hello! I am Helpy :-) How can I help?',
+  ])
   const [display, setDisplay] = useState(true)
   const [count, setCount] = useState(0)
 
@@ -91,7 +93,7 @@ function ChatBotPopup() {
   return (
     <div className="chatbot">
       <div className="chatBotHeader">
-        <h2>Virtual Assistant</h2>
+        <h2>Helpy</h2>
         <Eyes />
         <button onClick={minimize}>{display ? '-' : '>'}</button>
       </div>
