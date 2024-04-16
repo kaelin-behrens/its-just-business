@@ -24,16 +24,19 @@ function Home() {
   const [clues, setClues] = useState(splitPassword(answer))
   // console.log(clues)
 
+  const [surveyTime, setSurveyTime] = useState(false)
+  const [complete, setComplete] = useState(false)
+
   return (
     <>
-    <Survey/>
+    {surveyTime && !complete && <Survey current={complete} new={setComplete}/>}
       <div className="userbanner">
         <p className="usergreeting">
           Welcome back User93748GB57, work hours have commenced.
         </p>
 
         <p className="timertext">
-          This report is due in <Timer />
+          This report is due in <Timer currentSurveyState={surveyTime} newSurveyState={setSurveyTime} />
         </p>
         {/*//TODO replace with dynamic time */}
       </div>

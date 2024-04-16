@@ -3,6 +3,7 @@ import { useState } from "react"
 function Survey(props){
     const [showQuestions, setShowQuestions] = useState(false)
     const [hideButton, setHideButton] = useState(false)
+    
 
     function startSurvey(){
         setShowQuestions(true)
@@ -18,7 +19,9 @@ function Survey(props){
 
     function handleSubmit(e) {
         e.preventDefault()
+        props.new(true)
       }
+
 
     return (
         <>
@@ -36,7 +39,7 @@ function Survey(props){
                 <div>
                     <form onSubmit={handleSubmit}>
                         <div>
-                        <p>Statement 1</p>
+                        <p>I am challenged on a daily basis at work.</p>
                         <label htmlFor="1-sd">Strongly disagree</label><input name="rating1" id="1-sd" type="radio"></input>
                         <label htmlFor="1-d">Disagree</label><input id="1-d" name="rating1" type="radio"></input>
                         <label htmlFor="1-u">Unsure</label><input id="1-u" name="rating1" type="radio"></input>
@@ -44,7 +47,7 @@ function Survey(props){
                         <label htmlFor="1-sa">Strongly agree</label><input id="1-sa" name="rating1" type="radio"></input>
                         </div>
                         <div>
-                        <p>Statement 2</p>
+                        <p>I find my work rewarding.</p>
                         <label htmlFor="2-sd">Strongly disagree</label><input name="rating2" id="2-sd" type="radio"></input>
                         <label htmlFor="2-d">Disagree</label><input id="2-d" name="rating2" type="radio"></input>
                         <label htmlFor="2-u">Unsure</label><input id="2-u" name="rating2" type="radio"></input>
