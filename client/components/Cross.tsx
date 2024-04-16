@@ -1,6 +1,8 @@
-import { useState } from 'react'
-import '../styles/cross.css'
-
-export default function Cross(type?: string) {
-  return <button>X</button>
+export default function Cross(props?) {
+  const btnClass = props.type
+  return (
+    <button className={btnClass} id="fakeX">
+      X
+    </button>
+  )
 }
