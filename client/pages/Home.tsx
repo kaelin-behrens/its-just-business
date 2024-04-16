@@ -12,7 +12,7 @@ import ChatBotPopup from '../components/ChatBotPopup'
 import CodeBreaker from '../components/CodeBreaker'
 import Eyes from '../components/Eyes/Eyes'
 import Survey from '../components/Survey'
-import AltCodeBreaker from '../components/AltCodeBreaker'
+
 
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
@@ -84,8 +84,7 @@ function Home() {
       </div>
       <div className="body">
         <div className="codebreaker">
-          <AltCodeBreaker/>
-          {/* <CodeBreaker clues={clues} /> */}
+          <CodeBreaker clues={clues} />
         </div>
         <div className="captcha">
           <FormHP clues={clues} />

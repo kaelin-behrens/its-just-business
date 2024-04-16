@@ -1,77 +1,119 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from "react";
 
-function CodeBreaker(props) {
-  const [sequence, setSequence] = useState([])
-  const [selectedNumbers, setSelectedNumbers] = useState(Array(10).fill(false))
-  const [attemptCount, setAttemptCount] = useState(0)
-  const [gameOver, setGameOver] = useState(false)
-  const [win, setWin] = useState(false)
-  const [image, setImage] = useState(true)
-  const fragment = props.clues[0]
-
-  useEffect(() => {
-    initializeGame() // This initializes the game when the component mounts
-  }, [])
-
-  function img() {
-    setImage(false)
-  }
-
-  function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1))
-      ;[array[i], array[j]] = [array[j], array[i]] // Swap elements
+function shuffle(array) {
+    let currentIndex = array.length;
+    while (currentIndex != 0) {
+      let randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
     }
     return array
   }
 
-  function initializeGame() {
+
+function CodeBreaker(props){
+    const [sequence, setSequence] = useState([0])
     const numbers = Array.from({ length: 10 }, (_, index) => index)
-    const shuffledNumbers = shuffleArray(numbers)
-    console.log('Shuffled numbers:', shuffledNumbers) // Log the full shuffled array
-    setSequence(shuffledNumbers.slice(0, 4))
-    console.log('Correct numbers:', shuffledNumbers.slice(0, 4)) // Log the selected correct numbers
+    const [selectedNumbers, setSelectedNumbers]  = useState([1])
+    const [roundOver, setRoundOver]  = useState(false)
+    const [image, setImage] = useState(true)
 
-    // Reset other states for a new game
-    setSelectedNumbers(Array(10).fill(false))
-    setAttemptCount(0)
-    setGameOver(false)
-    setWin(false)
-  }
+    const [red, setRed] = useState([])
+    const [yellow, setYellow] = useState([])
+    const [green, setGreen] = useState([])
 
-  function handleNumberClick(index: number) {
-    if (gameOver || selectedNumbers[index]) {
-      return
+    const [win, setWin] = useState(false)
+    const fragment = props.clues[0]
+
+    useEffect(() => {
+        initializeGame() 
+      }, [])
+
+    function img() {
+        setImage(false)
     }
 
-    const updatedSelectedNumbers = [...selectedNumbers]
-    updatedSelectedNumbers[index] = true
-    setSelectedNumbers(updatedSelectedNumbers)
-    setAttemptCount((prev) => prev + 1)
-
-    if (sequence.every((num) => updatedSelectedNumbers[num])) {
-      setWin(true)
-      setGameOver(true)
-    } else if (attemptCount + 1 === 5) {
-      setGameOver(true)
+    function initializeGame(){
+        const shuffledNumbers = shuffle(numbers)
+        setSequence(shuffledNumbers.slice(0, 4))
+        console.log(shuffledNumbers.slice(0, 4))
+        setSelectedNumbers([])
+        
     }
-  }
 
-  function resetGame() {
-    initializeGame()
-  }
-
-  function getNumberColor(index: number) {
-    if (!selectedNumbers[index]) {
-      return '#CCD6E3'
+    function handleNumberClick(e){
+        if(selectedNumbers.length == 4){
+            setSelectedNumbers([])
+            const updatedSelect = [Number(e.target.value)]
+            setSelectedNumbers(updatedSelect) 
+        } else {
+            const updatedSelect = [... selectedNumbers, Number(e.target.value)]
+            setSelectedNumbers(updatedSelect) 
+        }
+        if(selectedNumbers.length == 3){
+            setRoundOver(true)
+        }
     }
-    return sequence.includes(index) ? 'green' : 'red'
-  }
 
-  return (
-    <>
-      {' '}
-      {image && (
+    function checkSequence(selection : number[]) {
+        console.log(sequence.toString())
+        console.log(selection.toString())
+        if(sequence.toString() == selection.toString()){
+            return true
+        } else {
+            return false
+        }
+    }
+
+    function getNumberColor() {
+        const newRed = [... red]
+        const newYellow = [... yellow]
+        const newGreen = [... green]
+        selectedNumbers.map((item, index) => {
+            if(item === sequence[index]){
+                if(newYellow.includes(item)){
+                    const i = newYellow.indexOf(item)
+                    newYellow.splice(i)
+                }
+                if(!newGreen.includes(item)) {
+                    newGreen.push(item)
+                }
+            } else if (sequence.includes(item)){
+                if(newGreen.includes(item)){
+                    const i = newGreen.indexOf(item)
+                    newGreen.splice(i)
+                }
+                if(!newYellow.includes(item)) {
+                    newYellow.push(item)
+                }
+            }
+            else if(!newRed.includes(item)) {newRed.push(item)}
+            }
+        )
+        setGreen(newGreen) 
+        setYellow(newYellow) 
+        setRed(newRed) 
+        }
+
+        {win && <p>Password clue: {fragment}</p>}
+
+    if(roundOver){
+        if(checkSequence(selectedNumbers)){
+            getNumberColor()
+            setTimeout(function() {
+                setWin(true)
+            }, 500);
+            setRoundOver(false)
+            console.log('complete')
+        } else{
+            getNumberColor()
+            setRoundOver(false)
+        }
+    }
+
+    return <>
+    {image && (
         <button onClick={img}>
           {' '}
           <img
@@ -80,58 +122,16 @@ function CodeBreaker(props) {
           />
         </button>
       )}
-      {!image && (
-        <>
-          <h2>Click the numbers to solve the puzzle</h2>
-          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-            {Array.from({ length: 10 }).map((_, index) => (
-              <button
-                key={index}
-                style={{
-                  width: '50px',
-                  height: '50px',
-                  margin: '5px',
-                  backgroundColor: getNumberColor(index),
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  cursor: gameOver ? 'default' : 'pointer',
-                  WebkitTextStrokeColor: 'white',
-                }}
-                onClick={() => handleNumberClick(index)}
-                disabled={gameOver || selectedNumbers[index]}
-              >
-                {index}
-              </button>
-            ))}
-          </div>
-          {gameOver && (
-            <>
-              <div
-                style={{
-                  marginTop: '20px',
-                  fontWeight: 'bold',
-                  fontSize: '18px',
-                }}
-              >
-                {win && <p>Password clue: {fragment}</p>}
-                {win
-                  ? 'Congratulations! You have completed the puzzle!'
-                  : 'Game Over! Try again.'}
-              </div>
-              <button onClick={resetGame} style={{ marginTop: '10px' }}>
-                Restart Game
-              </button>
-            </>
-          )}{' '}
-        </>
-      )}
+    {!image && !win && <>
+    {numbers.map((item, index) => <button key={index} value={item} className={red.includes(item) ? "codered" : yellow.includes(item) ? "codeyellow" : green.includes(item) ? "codegreen" : "nope"} onClick={handleNumberClick}>{item}</button>)}
+    <h3>{selectedNumbers.map((item, index) => <span key={index}> {item} </span>)}</h3>
+    <h1>Red {red.map((item, index) => <span key={index}> {item} </span>)}</h1>
+    <h1>Yellow {yellow.map((item, index) => <span key={index}> {item} </span>)}</h1>
+    <h1>Green {green.map((item, index) => <span key={index}> {item} </span>)}</h1> 
+    </>}
+    {win && <p>Password clue: {fragment}</p>}
     </>
-  )
 }
 
-export default CodeBreaker
 
-// function generateRandomSequence(): any {
-//   throw new Error("Function not implemented.");
-// }
+export default CodeBreaker
