@@ -8,9 +8,10 @@ import DnD from '../components/DragAndDrop/DnD'
 import Timer from '../components/Timer'
 import WhackAMole from '../components/WhackAMole'
 
-import ChatBotPopup from '../components/SpamPopup'
+import ChatBotPopup from '../components/ChatBotPopup'
 import CodeBreaker from '../components/CodeBreaker'
 import Eyes from '../components/Eyes/Eyes'
+import Survey from '../components/Survey'
 
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
@@ -24,15 +25,19 @@ function Home() {
   const [clues, setClues] = useState(splitPassword(answer))
   // console.log(clues)
 
+  const [surveyTime, setSurveyTime] = useState(false)
+  const [complete, setComplete] = useState(false)
+
   return (
     <>
+    {surveyTime && !complete && <Survey current={complete} new={setComplete}/>}
       <div className="userbanner">
         <p className="usergreeting">
           Welcome back User93748GB57, work hours have commenced.
         </p>
 
         <p className="timertext">
-          This report is due in <Timer />
+          This report is due in <Timer currentSurveyState={surveyTime} newSurveyState={setSurveyTime} />
         </p>
         {/*//TODO replace with dynamic time */}
       </div>
