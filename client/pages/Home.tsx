@@ -13,6 +13,7 @@ import CodeBreaker from '../components/CodeBreaker'
 import Eyes from '../components/Eyes/Eyes'
 import Survey from '../components/Survey'
 import Cross from '../components/Cross'
+import KPIPopup from '../components/KPIPopup'
 
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
@@ -28,6 +29,8 @@ function Home() {
 
   const [surveyTime, setSurveyTime] = useState(false)
   const [complete, setComplete] = useState(false)
+
+  const [number, setNumber] = useState(1)
 
   return (
     <>
@@ -88,7 +91,7 @@ function Home() {
           </p> */}
         </div>
       </div>
-      <Cross />
+      <KPIPopup />
       <div className="body">
         <div className="codebreaker">
           <CodeBreaker clues={clues} />
