@@ -173,3 +173,19 @@ textarea {
   padding: 10px;
   margin-bottom :10px;
 }
+
+
+/* CodeBreaker */
+
+.codered {
+  background-color: red;
+}
+
+.codeyellow {
+  background-color: rgb(255, 204, 0);
+}
+
+.codegreen {
+  background-color: rgb(9, 255, 0);
+}
+
