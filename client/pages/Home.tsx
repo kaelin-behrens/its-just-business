@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import AuthPopup from '../components/AuthPopup'
 import FormHP from '../components/FormHP'
 
@@ -12,7 +12,8 @@ import ChatBotPopup from '../components/ChatBotPopup'
 import CodeBreaker from '../components/CodeBreaker'
 import Eyes from '../components/Eyes/Eyes'
 import Survey from '../components/Survey'
-
+import Cross from '../components/Cross'
+import KPIPopup from '../components/KPIPopup'
 
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
@@ -20,6 +21,10 @@ function Home() {
     setShowPopUP(!showPopUp)
   }
 
+  const [showKPI, setShowKPI] = useState(false)
+  function kpi() {
+    setShowKPI(!showKPI)
+  }
   // console log pw for testing purposes
   const [answer, setAnswer] = useState(String(createPassword()))
   console.log(answer)
@@ -29,11 +34,27 @@ function Home() {
   const [surveyTime, setSurveyTime] = useState(false)
   const [complete, setComplete] = useState(false)
 
+  const [number, setNumber] = useState(1)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setShowKPI(true)
+    }, 45000)
+    const timer2 = setInterval(() => {
+      setShowKPI(false)
+    }, 15000)
+    return () => {
+      clearInterval(timer)
+      clearInterval(timer2)
+    }
+  }, [])
+
   return (
     <>
       {surveyTime && !complete && (
         <Survey current={complete} new={setComplete} />
       )}
+      {showKPI && <KPIPopup />}
       <div className="userbanner">
         <p className="usergreeting">
           Welcome back User93748GB57, work hours have commenced.
