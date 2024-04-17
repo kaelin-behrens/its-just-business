@@ -80,7 +80,7 @@ function Home() {
       <div className="wrapper">
         <div className="header">
           <div className="row">
-            <div>
+            <div className="topstuff">
               <h1 className="title">Important Business Report</h1>
               <p className="blandtext">
                 In todays dynamic marketplace, companies must leverage
@@ -117,14 +117,24 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="captcha grid-item">
-            <FormHP clues={clues} />
+          <div className="row">
+            <div className="captcha grid-item">
+              <FormHP clues={clues} />
+            </div>{' '}
+            <div className="dragndrop  grid-item">
+              <DnD clues={clues} />
+            </div>
           </div>
-          <div className="whackamole  grid-item">
-            <WhackAMole clues={clues} />
-          </div>
-          <div className="dragndrop  grid-item">
-            <DnD clues={clues} />
+          <div className="row">
+            {' '}
+            <img
+              id="otherimage"
+              src="../../public/stock photography 7.webp"
+              alt="group of people doing business"
+            />
+            <div className="whackamole  grid-item">
+              <WhackAMole clues={clues} />
+            </div>
           </div>
         </div>
 

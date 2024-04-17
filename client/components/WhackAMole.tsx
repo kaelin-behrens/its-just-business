@@ -112,7 +112,7 @@ function WhackAMole(props) {
 
   function handleCount() {
     setCount(count + 1)
-    if (count === 9) {
+    if (count === 5) {
       console.log('WIN')
       setWin(true)
     }
@@ -126,7 +126,7 @@ function WhackAMole(props) {
           randomNumber() > 0.5 ? sentence.corruptText : sentence.healthyText,
       }))
       setGame(randomizedGame)
-    }, 10000)
+    }, 20000)
 
     return () => {
       clearInterval(timer)

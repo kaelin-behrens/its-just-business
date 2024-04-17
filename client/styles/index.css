@@ -112,6 +112,10 @@ textarea {
   padding: 5%;
 }
 
+#otherimage {
+  border-radius: 10px;
+}
+
 .authpopup {
   display: flex;
   justify-content: center;
@@ -259,6 +263,11 @@ textarea {
   transition-duration: 0.1s;
 }
 
+.topstuff {
+  background-color: #0e8af01a;
+  border-radius: 10px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -285,6 +294,8 @@ body {
 .row {
   flex-direction: row;
   justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 30px;
 }
 
 /*----------Keyframes------*/
