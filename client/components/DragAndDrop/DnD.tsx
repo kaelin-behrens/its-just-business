@@ -59,7 +59,7 @@ export default function DnD(props) {
     <div className="graphBg">
       {win && <PasswordPopup password={fragment} />}
       <p className="glitch Graphtitle">
-        Layoffs of Workers vs{' '}
+        Worker Layoffs vs{' '}
         <button onClick={handleClick} className="remove title">
           {title}
         </button>

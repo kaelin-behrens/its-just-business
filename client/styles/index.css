@@ -116,12 +116,12 @@ textarea {
   box-sizing: border-box;
   padding: 5%;
 }
-.dragndrop p {
+/* .dragndrop p {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
   color: #3a506b;
-}
+} */
 
 .button {
   background-color: #0b132b;
@@ -210,7 +210,6 @@ textarea {
   margin-bottom: 10px;
 }
 
-
 /* CodeBreaker */
 /* feel free to change colors */
 
@@ -240,4 +239,3 @@ body {
   display: flex;
   justify-content: center;
 }
-

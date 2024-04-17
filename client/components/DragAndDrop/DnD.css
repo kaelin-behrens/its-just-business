@@ -1,6 +1,4 @@
-/* .graphBg {
-
-
+.graphBg {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
@@ -11,18 +9,17 @@
 
 .Graphtitle {
   color: #0b132bff;
-  padding-left: 10%;
+  padding-right: 40%;
   text-decoration: underline;
-  text-underline-position: below;
+  font-weight: bold;
 }
 .xaxis {
   transform: rotate(-90deg);
-  align-self: flex-end;
-  margin-right: -100px;
+  margin-right: -170px;
 }
 
 .yaxis {
-  padding-left: 30%;
+  padding-right: 40%;
 }
 
 .row {
@@ -45,4 +42,4 @@
   color: #0b132bff;
   text-decoration: underline;
   text-underline-position: below;
-} */
+}
