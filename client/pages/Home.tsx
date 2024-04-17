@@ -8,8 +8,10 @@ import DnD from '../components/DragAndDrop/DnD'
 import Timer from '../components/Timer'
 import WhackAMole from '../components/WhackAMole'
 
-import ChatBotPopup from '../components/SpamPopup'
+import ChatBotPopup from '../components/ChatBotPopup'
 import CodeBreaker from '../components/CodeBreaker'
+import Eyes from '../components/Eyes/Eyes'
+import Survey from '../components/Survey'
 
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
@@ -23,15 +25,25 @@ function Home() {
   const [clues, setClues] = useState(splitPassword(answer))
   // console.log(clues)
 
+  const [surveyTime, setSurveyTime] = useState(false)
+  const [complete, setComplete] = useState(false)
+
   return (
     <>
+      {surveyTime && !complete && (
+        <Survey current={complete} new={setComplete} />
+      )}
       <div className="userbanner">
         <p className="usergreeting">
           Welcome back User93748GB57, work hours have commenced.
         </p>
 
         <p className="timertext">
-          This report is due in <Timer />
+          This report is due in{' '}
+          <Timer
+            currentSurveyState={surveyTime}
+            newSurveyState={setSurveyTime}
+          />
         </p>
         {/*//TODO replace with dynamic time */}
       </div>
@@ -39,7 +51,7 @@ function Home() {
         <img
           className="businesslogo"
           src="../../public/logo.svg"
-          alt="sad face"
+          alt="logo"
         ></img>
       </div>
       <div className="header">
@@ -75,26 +87,26 @@ function Home() {
           </p> */}
         </div>
       </div>
-      <div className="body">
-        <div className="codebreaker">
+      <div className="grid-container">
+        <div className="codebreaker grid-item">
           <CodeBreaker clues={clues} />
         </div>
-        <div className="captcha">
+        <div className="captcha grid-item">
           <FormHP clues={clues} />
         </div>
-        <div className="whackamole">
+        <div className="whackamole  grid-item">
           <WhackAMole clues={clues} />
         </div>
-        <div className="dragndrop">
+        <div className="dragndrop  grid-item">
           <DnD clues={clues} />
         </div>
-        <div className="finalbutton">
-          <button className="finalbutton" onClick={handleSubmit}>
-            Submit
-          </button>
-        </div>
-        {showPopUp && <AuthPopup answer={answer} />}
       </div>
+      <div className="finalbuttoncontainer">
+        <button className="finalbutton" onClick={handleSubmit}>
+          Submit
+        </button>
+      </div>
+      {showPopUp && <AuthPopup answer={answer} />}
       <ChatBotPopup />
     </>
   )

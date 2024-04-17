@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function Timer() {
-  const [secondsRemaining, setSecondsRemaining] = useState(2 * 6000000000)
+function Timer(props) {
+  const [secondsRemaining, setSecondsRemaining] = useState(60 * 10)
   // add state management to save seconds remaining and stop timer? for potential leaderboard
 
   const navigate = useNavigate()
@@ -13,12 +13,14 @@ function Timer() {
         if (prevSeconds === 0) {
           clearInterval(interval)
           navigate('/fail')
-          return prevSeconds
+          return prevSeconds}
+        else if (prevSeconds == 120){
+          props.newSurveyState(true)
+          return prevSeconds - 1
         }
         return prevSeconds - 1
       })
     }, 1000)
-
     return () => clearInterval(interval)
   }, [])
 
