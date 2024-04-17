@@ -36,9 +36,11 @@
 }
 
 .title {
-  font-size: 160%;
+  font-size: 200%;
   font-weight: bold;
   margin-left: 6%;
+  margin-top: 3%;
+  color: #0b132bff;
 }
 
 .blandtext {
@@ -64,7 +66,7 @@
 .grid-item {
   width: 100%;
   height: auto;
-  text-align: center;
+  /* text-align: center; */
   padding: 20px;
 }
 

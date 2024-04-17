@@ -128,6 +128,7 @@ function Home() {
           <div className="row">
             {' '}
             <img
+              className="element-duplication"
               id="otherimage"
               src="../../public/stock photography 7.webp"
               alt="group of people doing business"
