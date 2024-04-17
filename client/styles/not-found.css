@@ -7,11 +7,16 @@
   text-align: center;
   font-family: 'Arial', sans-serif;
 }
-
+.timeRow {
+  flex-direction: row;
+}
 .fourOhfour {
   font-size: 396px;
   animation: cursedText 0.4s infinite;
   margin-top: 0px;
+}
+.timeTitle {
+  animation: duplication 4s infinite ease-in-out;
 }
 
 .imageNotFound {
@@ -23,6 +28,11 @@
 
 .return {
   font-size: 34px;
+}
+
+.return:hover {
+  opacity: 20%;
+  font-size: 44px;
 }
 
 @keyframes cursedText {
@@ -42,5 +52,18 @@
   75% {
     color: #00e;
     text-shadow: 1px -1px 0 #e00;
+  }
+}
+
+@keyframes duplication {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  50% {
+    transform: scale(1.05);
+    filter: blur(2px);
+    opacity: 0.7;
   }
 }
