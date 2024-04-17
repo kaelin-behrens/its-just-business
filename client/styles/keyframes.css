@@ -17,7 +17,19 @@
     transform: translate3d(1px, -1px, 0);
   }
 }
-
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+/* component/box/grid that want a slide in  */
+.box {
+  animation: slide-in 1000ms;
+  animation-timing-function: linear;
+}
 @keyframes opacityBlip {
   0%,
   100% {
