@@ -20,8 +20,6 @@ export const Bar = ({ id, title }) => {
       {...listeners}
       className="bar "
       id={title}
-    >
-      <p>{title}</p>
-    </div>
+    ></div>
   )
 }
