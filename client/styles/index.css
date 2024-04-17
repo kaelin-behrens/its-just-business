@@ -116,9 +116,11 @@ textarea {
 
 #otherimage {
   border-radius: 10px;
+  object-fit: cover;
 }
 #fakeimage {
   border-radius: 10px;
+  object-fit: cover;
   width: 100%;
 }
 

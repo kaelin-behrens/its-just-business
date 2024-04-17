@@ -155,7 +155,7 @@ function WhackAMole(props) {
       {game.map((sentence, idx) => (
         <>
           <span key={idx} onClick={() => cleanse(sentence)} className="mole">
-            ©️ {sentence.text}&nbsp;
+            ➡️ {sentence.text}&nbsp;
           </span>
           <br />
         </>
