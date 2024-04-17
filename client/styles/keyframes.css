@@ -61,7 +61,7 @@
   }
 }
 
-/* Applying Glitchy Animations */
+/*Glitchy Animations */
 .element-minorShift {
   animation: minorShift 1s infinite linear;
 }
