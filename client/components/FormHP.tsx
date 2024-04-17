@@ -15,9 +15,16 @@ function FormHP(props) {
     'Q1 witnessed robust sales growth across multiple segments, underscoring the resilience and adaptability of our sales force. Despite prevailing market headwinds, our strategic initiatives have yielded commendable results, bolstering our market positioning and driving sustained revenue expansion.Aggressive market penetration strategies led to a notable increase in our market share, consolidating our foothold in key territories. By leveraging targeted marketing campaigns and fostering strategic partnerships, we have augmented our brand visibility and expanded our customer base.'
 
   return (
-    <div>
+    <div
+      style={{
+        height: '100%',
+        width: '80%',
+        background: '#0e8af01a',
+        borderRadius: '15px',
+      }}
+    >
       {displayCaptcha == 'form' && (
-        <form className="captchaform" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div>
             {' '}
             <div>
@@ -32,8 +39,8 @@ function FormHP(props) {
             </div>
             <input defaultValue={'Executive Summary'}></input>
           </div>{' '}
-          <div className="textareadiv">
-            <textarea defaultValue={reportText} rows={6}></textarea>
+          <div style={{ margin: '2%', height: '300%' }}>
+            <textarea defaultValue={reportText} rows={25}></textarea>
           </div>
           <button type="submit" data-testid="formBtn">
             Submit

@@ -113,11 +113,13 @@ function Home() {
         <div className="codebreaker grid-item">
           <CodeBreaker clues={clues} />
         </div>
-        <div className="captcha grid-item">
-          <FormHP clues={clues} />
-        </div>
+
         <div className="whackamole  grid-item">
           <WhackAMole clues={clues} />
+        </div>
+
+        <div className="captcha grid-item">
+          <FormHP clues={clues} />
         </div>
         <div className="dragndrop  grid-item">
           <DnD clues={clues} />

@@ -117,7 +117,7 @@ function CodeBreaker(props) {
   return (
     <>
       {image && (
-        <button onClick={img}>
+        <button style={{ border: 'none', margin: 0, padding: 0 }} onClick={img}>
           {' '}
           <img
             className="fakeimage"
