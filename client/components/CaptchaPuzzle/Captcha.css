@@ -146,8 +146,7 @@
   justify-content: space-around;
 }
 
-.chatbot input,
-button {
+.chatbot input {
   margin-top: 10px;
   -webkit-text-fill-color: rgb(0, 0, 0);
 }
@@ -162,7 +161,7 @@ button {
   border: 1px solid grey;
   width: 300px;
   background-color: #ffffff;
-  -webkit-text-fill-color: rgb(0, 0, 0);
+  color: black;
 }
 
 .usertext {

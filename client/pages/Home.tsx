@@ -109,27 +109,26 @@ function Home() {
           </p> */}
         </div>
       </div>
-      <div className="body">
-        <div className="codebreaker">
+      <div className="grid-container">
+        <div className="codebreaker grid-item">
           <CodeBreaker clues={clues} />
         </div>
-        <div className="captcha">
+        <div className="captcha grid-item">
           <FormHP clues={clues} />
         </div>
-        <div className="whackamole">
+        <div className="whackamole  grid-item">
           <WhackAMole clues={clues} />
         </div>
-        <div className="dragndrop">
+        <div className="dragndrop  grid-item">
           <DnD clues={clues} />
         </div>
-        <div>
-          <button className="button" onClick={handleSubmit} id="submitBtn">
-            Submit
-          </button>
-        </div>
-        {showPopUp && <AuthPopup answer={answer} />}
       </div>
-
+      <div className="finalbuttoncontainer">
+        <button className="finalbutton" onClick={handleSubmit}>
+          Submit
+        </button>
+      </div>
+      {showPopUp && <AuthPopup answer={answer} />}
       <ChatBotPopup />
     </>
   )
