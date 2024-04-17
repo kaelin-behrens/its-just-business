@@ -129,12 +129,15 @@ function Home() {
             <DnD clues={clues} />
           </div>
         </div>
-
         <div className="finalbuttoncontainer">
           <button className="finalbutton" onClick={handleSubmit}>
             Submit
           </button>
         </div>
+      <div className="finalbuttoncontainer">
+        <button className="finalbutton" onClick={handleSubmit}>
+          Submit
+        </button>
       </div>
       {showPopUp && <AuthPopup answer={answer} />}
       <ChatBotPopup />

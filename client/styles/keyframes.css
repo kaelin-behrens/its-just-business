@@ -1,0 +1,91 @@
+@keyframes minorShift {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate3d(-1px, 1px, 0);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate3d(1px, -1px, 0);
+  }
+}
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+/* component/box/grid that want a slide in  */
+.box {
+  animation: slide-in 1000ms;
+  animation-timing-function: linear;
+}
+@keyframes opacityBlip {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes duplication {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  50% {
+    transform: scale(1.05);
+    filter: blur(2px);
+    opacity: 0.7;
+  }
+}
+
+@keyframes cursedText {
+  0%,
+  100% {
+    color: #000;
+    text-shadow: none;
+  }
+  25% {
+    color: #e00;
+    text-shadow: 1px 1px 0 #0e0;
+  }
+  50% {
+    color: #0ee;
+    text-shadow: -1px -1px 0 rgb(137, 5, 137);
+  }
+  75% {
+    color: #00e;
+    text-shadow: 1px -1px 0 #e00;
+  }
+}
+
+/*Glitchy Animations */
+.element-minorShift {
+  animation: minorShift 1s infinite linear;
+}
+
+.element-opacityBlip {
+  animation: opacityBlip 3s infinite ease-in-out;
+}
+
+.element-duplication {
+  animation: duplication 4s infinite ease-in-out;
+}
+
+.element-cursedText {
+  animation: cursedText 5s infinite;
+}
