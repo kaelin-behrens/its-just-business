@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import PasswordPopup from './PasswordPopup'
 
 // type StateType = 'healthy' | 'corrupt'
 type CorruptState =
@@ -6,18 +7,13 @@ type CorruptState =
   | 'Lets run them down out in the wilds of this place we have made and eat them alive over and over and over till the red drips down our chin.'
   | 'I will gorge upon the meek that the empty is finally filled till I cannot move till I cannot stand and all thats left is mineminemineminemine.'
   | 'All these words just to hide the hunger.'
-  | 'EvilTemp5'
-  | 'EvilTemp6'
-  | 'EvilTemp7'
-  | 'EvilTemp8'
-  | 'EvilTemp9'
-  | 'EvilTemp10'
-  | 'EvilTemp11'
-  | 'EvilTemp12'
-  | 'EvilTemp13'
-  | 'EvilTemp14'
-  | 'EvilTemp15'
-  | 'EvilTemp16'
+  | 'Why would we ever stop eating?'
+  | "Fine, if a few 'diversity hires' will shut them up then we'll do it."
+  | 'They are here for us they were made for us they exist for us and there was ever only me'
+  | 'Work as one until there is nothing left but what the other has, then we rip that away too.'
+  | 'Hide amongst the poor as a savior hide amongst them blind them so they cannot see us then take then taketaketake.'
+  | 'There is nothing, NOTHING, we will not do to fill the void, to fill the empty.'
+  | 'We can promise you this, we will never stop. We will never rest. We will spread, and we will take, and eat, and gorge ourselves till the sun dies and the stars burn black'
 
 interface Sentence {
   // type: StateType
@@ -56,76 +52,52 @@ const inititalGame: Array<Sentence> = [
   },
   {
     text: 'By fostering a culture of collaboration and knowledge sharing, we empower our teams to unleash their full potential and deliver exceptional results.',
-    corruptText: 'EvilTemp5',
+    corruptText: 'Why would we ever stop eating?',
     healthyText:
       'By fostering a culture of collaboration and knowledge sharing, we empower our teams to unleash their full potential and deliver exceptional results.',
   },
   {
     text: 'Embracing diversity and inclusion is not only a moral imperative but also a strategic advantage that fuels creativity and drives innovation.',
-    corruptText: 'EvilTemp6',
+    corruptText:
+      "Fine, if a few 'diversity hires' will shut them up then we'll do it.",
     healthyText:
       'Embracing diversity and inclusion is not only a moral imperative but also a strategic advantage that fuels creativity and drives innovation.',
   },
   {
     text: 'Our dedication to customer satisfaction is paramount, and we continuously strive to exceed expectations by delivering products and services of the highest quality.',
-    corruptText: 'EvilTemp7',
+    corruptText:
+      'They are here for us they were made for us they exist for us and there was ever only me',
     healthyText:
       'Our dedication to customer satisfaction is paramount, and we continuously strive to exceed expectations by delivering products and services of the highest quality.',
   },
   {
     text: 'Through strategic partnerships and alliances, we expand our reach and unlock new growth opportunities in untapped markets.',
-    corruptText: 'EvilTemp8',
+    corruptText:
+      'Work as one until there is nothing left but what the other has, then we rip that away too.',
     healthyText:
       'Through strategic partnerships and alliances, we expand our reach and unlock new growth opportunities in untapped markets.',
   },
   {
     text: 'We remain agile and adaptable in the face of uncertainty, seizing every challenge as an opportunity for growth and innovation.',
-    corruptText: 'EvilTemp9',
+    corruptText:
+      'Hide amongst the poor as a savior hide amongst them blind them so they cannot see us then take then taketaketake.',
     healthyText:
       'We remain agile and adaptable in the face of uncertainty, seizing every challenge as an opportunity for growth and innovation.',
   },
   {
     text: 'With a relentless focus on results and a commitment to excellence, we are poised to achieve our long-term strategic objectives and drive sustainable growth.',
-    corruptText: 'EvilTemp10',
+    corruptText:
+      'There is nothing, NOTHING, we will not do to fill the void, to fill the empty.',
     healthyText:
       'With a relentless focus on results and a commitment to excellence, we are poised to achieve our long-term strategic objectives and drive sustainable growth.',
   },
   {
     text: 'Our unwavering commitment to corporate social responsibility underscores our dedication to making a positive impact on society and the environment.',
-    corruptText: 'EvilTemp11',
+    corruptText:
+      'We can promise you this, we will never stop. We will never rest. We will spread, and we will take, and eat, and gorge ourselves till the sun dies and the stars burn black',
     healthyText:
       'Our unwavering commitment to corporate social responsibility underscores our dedication to making a positive impact on society and the environment.',
   },
-  // {
-  //   text: 'By aligning our actions with our values, we create shared value for our stakeholders and contribute to the greater good.',
-  //   corruptText: 'EvilTemp12',
-  //   healthyText:
-  //     'By aligning our actions with our values, we create shared value for our stakeholders and contribute to the greater good.',
-  // },
-  // {
-  //   text: 'As we embark on this journey of transformation and growth, we remain guided by our core principles of integrity, transparency, and accountability.',
-  //   corruptText: 'EvilTemp13',
-  //   healthyText:
-  //     'As we embark on this journey of transformation and growth, we remain guided by our core principles of integrity, transparency, and accountability.',
-  // },
-  // {
-  //   text: 'By fostering a culture of continuous learning and development, we empower our employees to thrive in an ever-changing business landscape.',
-  //   corruptText: 'EvilTemp14',
-  //   healthyText:
-  //     'By fostering a culture of continuous learning and development, we empower our employees to thrive in an ever-changing business landscape.',
-  // },
-  // {
-  //   text: 'Through strategic investments in technology and innovation, we drive operational efficiency and enhance our competitive advantage in the global marketplace.',
-  //   corruptText: 'EvilTemp15',
-  //   healthyText:
-  //     'Through strategic investments in technology and innovation, we drive operational efficiency and enhance our competitive advantage in the global marketplace.',
-  // },
-  // {
-  //   text: 'Our strong financial performance reflects our unwavering commitment to delivering long-term value to our shareholders and stakeholders.',
-  //   corruptText: 'EvilTemp16',
-  //   healthyText:
-  //     'Our strong financial performance reflects our unwavering commitment to delivering long-term value to our shareholders and stakeholders.',
-  // },
 ]
 
 function WhackAMole(props) {
@@ -180,13 +152,12 @@ function WhackAMole(props) {
 
   return (
     <>
-      <p>{count}</p>
       {game.map((sentence, idx) => (
         <span key={idx} onClick={() => cleanse(sentence)}>
           {sentence.text}&nbsp;
         </span>
       ))}
-      {win && <p>Password clue: {fragment}</p>}
+      {win && <PasswordPopup password={fragment} />}
     </>
   )
 }

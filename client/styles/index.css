@@ -116,12 +116,12 @@ textarea {
   box-sizing: border-box;
   padding: 5%;
 }
-.dragndrop p {
+/* .dragndrop p {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
   color: #3a506b;
-}
+} */
 
 .button {
   background-color: #0b132b;
@@ -133,10 +133,10 @@ textarea {
   cursor: pointer;
 }
 
-.button:hover,
+/* .button:hover,
 .finalbutton:hover {
   background-color: #3a506b;
-}
+} */
 
 .authpopup {
   display: flex;
@@ -144,18 +144,12 @@ textarea {
   background-color: #0e8af01a;
   border-radius: 15px;
 }
-.finalbutton {
-  color: #5bc0be;
-  border: none;
-  border-radius: 15px;
-  font-size: 100%;
-  cursor: pointer;
-  padding: 0.75em;
-}
+
 .finalbuttoncontainer {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 3%;
 }
 
 /* CAE wrote for survey popup */
@@ -223,6 +217,11 @@ textarea {
 
 .codegreen {
   background-color: rgb(9, 255, 0);
+}
+
+.reportcontainer {
+  background: #0c66b03a;
+  border-radius: 40px;
 }
 
 body {

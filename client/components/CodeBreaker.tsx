@@ -120,7 +120,6 @@ function CodeBreaker(props) {
         <button style={{ border: 'none', margin: 0, padding: 0 }} onClick={img}>
           {' '}
           <img
-            className="fakeimage"
             src="../../public/stock photography 7.webp"
             alt="group of people doing business"
           />
