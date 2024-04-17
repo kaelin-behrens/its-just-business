@@ -12,8 +12,11 @@ import ChatBotPopup from '../components/ChatBotPopup'
 import CodeBreaker from '../components/CodeBreaker'
 import Eyes from '../components/Eyes/Eyes'
 import Survey from '../components/Survey'
+
+import ColorCaptcha from '../components/CaptchaPuzzle/ColorCaptcha'
 import Cross from '../components/Cross'
 import KPIPopup from '../components/KPIPopup'
+
 
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
@@ -123,6 +126,8 @@ function Home() {
           <DnD clues={clues} />
         </div>
       </div>
+
+
       <div className="finalbuttoncontainer">
         <button className="finalbutton" onClick={handleSubmit}>
           Submit
