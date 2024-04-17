@@ -17,7 +17,6 @@ import ColorCaptcha from '../components/CaptchaPuzzle/ColorCaptcha'
 import Cross from '../components/Cross'
 import KPIPopup from '../components/KPIPopup'
 
-
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
   function handleSubmit() {
@@ -126,7 +125,6 @@ function Home() {
           <DnD clues={clues} />
         </div>
       </div>
-
 
       <div className="finalbuttoncontainer">
         <button className="finalbutton" onClick={handleSubmit}>
