@@ -112,8 +112,14 @@ function Home() {
           </p> */}
         </div>
       </div>
+<<<<<<< HEAD
       <div className="grid-container">
         <div className="codebreaker grid-item">
+=======
+
+      <div className="body">
+        <div className="codebreaker">
+>>>>>>> da7f364a8d216854442372834a3636048c8a5c2f
           <CodeBreaker clues={clues} />
         </div>
         <div className="captcha grid-item">
