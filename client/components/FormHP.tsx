@@ -35,7 +35,7 @@ function FormHP(props) {
           <div className="textareadiv">
             <textarea defaultValue={reportText} rows={6}></textarea>
           </div>
-          <button className="formbutton" type="submit" data-testid="formBtn">
+          <button type="submit" data-testid="formBtn">
             Submit
           </button>
         </form>
