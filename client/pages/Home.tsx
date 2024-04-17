@@ -41,7 +41,7 @@ function Home() {
   useEffect(() => {
     const timer = setInterval(() => {
       setShowKPI(true)
-    }, 45000)
+    }, 100000)
     const timer2 = setInterval(() => {
       setShowKPI(false)
     }, 15000)

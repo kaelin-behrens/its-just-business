@@ -165,7 +165,7 @@ textarea {
   z-index: 20;
   position: fixed;
   content: '';
-  margin: 15%;
+  margin: 17%;
   top: 0;
   left: 0;
   bottom: 0;
@@ -213,7 +213,9 @@ textarea {
 
 .codered {
   background-color: red;
-  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-shadow:
+    rgba(27, 31, 35, 0.04) 0 1px 0,
+    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
   transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
   margin: 0.1rem;
   min-width: 2rem;
@@ -230,7 +232,9 @@ textarea {
 
 .codeyellow {
   background-color: rgb(255, 204, 0);
-  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-shadow:
+    rgba(27, 31, 35, 0.04) 0 1px 0,
+    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
   transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
   margin: 0.1rem;
   min-width: 2rem;
@@ -247,7 +251,9 @@ textarea {
 
 .codegreen {
   background-color: #42bd63;
-  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-shadow:
+    rgba(27, 31, 35, 0.04) 0 1px 0,
+    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
   transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
   margin: 0.1rem;
   min-width: 2rem;
@@ -264,7 +270,9 @@ textarea {
 
 .nocode {
   background-color: rgb(250, 250, 250);
-  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-shadow:
+    rgba(27, 31, 35, 0.04) 0 1px 0,
+    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
   transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
   margin: 0.1rem;
   min-width: 2rem;
@@ -273,19 +281,16 @@ textarea {
   border: none;
 }
 
-
 .reportcontainer {
   background: #0c66b03a;
   border-radius: 40px;
 }
-
 
 .nocode:hover {
   background-color: rgb(255, 255, 255);
   text-decoration: none;
   transition-duration: 0.1s;
 }
-
 
 body {
   margin: 0;
@@ -301,7 +306,6 @@ body {
   display: flex;
   justify-content: center;
 }
-
 
 .wrapper {
   background-color: #ffffff;
@@ -396,5 +400,4 @@ body {
 
 .element-cursedText {
   animation: cursedText 5s infinite;
-
 }
