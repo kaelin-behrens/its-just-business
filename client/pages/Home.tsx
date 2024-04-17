@@ -109,8 +109,6 @@ function Home() {
         </div>
         {showPopUp && <AuthPopup answer={answer} />}
       </div>
-      <ColorCaptcha/>
-
       <ChatBotPopup />
     </>
   )

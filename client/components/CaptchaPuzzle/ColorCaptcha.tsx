@@ -7,15 +7,15 @@ import './Captcha.css';
 
 const imgArr : Pic[] = data.images
 helper.shuffle(imgArr)
-const newImgArr = imgArr.slice(0, 9)
+const newImgArr = imgArr.slice(0, 16)
 let captchaData : OrganisedPic[] = []
 for (let i = 0; i < newImgArr.length; i++) {
     captchaData.push({image: newImgArr[i].image, type: newImgArr[i].type, index: i})
 }
 
 
-function ColorCaptcha(){
-    const initialGridState = [false, false, false, false, false, false, false, false, false]
+function ColorCaptcha(props){
+    const initialGridState = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false,]
     const [grid, setGrid] = useState(initialGridState)
     const [startAgain, setStartAgain] = useState(false)
     const [count, setCount]= useState(0)
@@ -23,6 +23,7 @@ function ColorCaptcha(){
     const [resultText, setResultText] = useState(`${count}/2 complete`)
     const [buttonSlide, setButtonSlide] = useState("")
 
+    const {newDisplay} = props
 
     const [resetTrigger, setResetTrigger] = useState(false);
     useEffect(() => {
@@ -34,7 +35,7 @@ function ColorCaptcha(){
     function rearrangeData(){
         const imgArr = data.images
         helper.shuffle(imgArr)
-        const newImgArr = imgArr.slice(0, 9)
+        const newImgArr = imgArr.slice(0, 16)
         const captchaData : OrganisedPic[] = []
         for (let i = 0; i < newImgArr.length; i++) {
             captchaData.push({image: newImgArr[i].image, type: newImgArr[i].type, index: i})
@@ -60,7 +61,7 @@ function ColorCaptcha(){
                 }  
             }
             if(count + 1 == 2){
-                console.log('test')
+                newDisplay(false)
             } else {
                 setResultText(`${count + 1}/2 complete`)
                 setCount(count + 1)
@@ -81,7 +82,7 @@ function ColorCaptcha(){
 
     return <div className="puzzle-box">
     <h1>Select all {chosen} squares</h1>
-    <div className='cap-container'>
+    <div className='color-cap-container'>
     {captchaData.map(pic => 
        <ColorCaptchaImage key={pic.index} info={pic} startAgain={startAgain} stop={setStartAgain} toChild={grid} toParent={setGrid}/>
             )

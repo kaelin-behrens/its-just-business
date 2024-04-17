@@ -17,6 +17,7 @@
   background-color: rgb(40, 40, 40);
 }
 
+/* grid for photo captcha */
 .cap-container {
   display: grid;
   grid-template-columns: repeat(3, 120px);
@@ -25,6 +26,7 @@
   column-gap: 20px;
 }
 
+/* individual squares for photo captcha */
 .cap-item img {
   width: 120px;
   height: 120px;
@@ -32,6 +34,39 @@
   position: relative;
   bottom: 1px;
   right: 6px;
+}
+
+/* grid for color captcha */
+.color-cap-container {
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  grid-template-rows: repeat(4, 62px);
+  row-gap: 5px;
+  column-gap: 5px;
+}
+
+/* individual squares for color captcha */
+.color-cap-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  position: relative;
+  bottom: 2.5px;
+  right: 7.5px;
+}
+
+.color-cap-blue {
+  border: solid #007bff 3px;
+  width: 63px;
+  height: 63px;
+  background-color: rgb(40, 40, 40);
+}
+
+.color-cap-blank {
+  border: solid #ffffff 3px;
+  width: 63px;
+  height: 63px;
+  background-color: rgb(40, 40, 40);
 }
 
 .fade {

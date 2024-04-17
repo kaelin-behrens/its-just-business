@@ -4,7 +4,7 @@ export const images = [
   { image: '../../public/ImageGathering/blue2.png', type: 'blue' },
   { image: '../../public/ImageGathering/blue3.jpg', type: 'blue' },
   { image: '../../public/ImageGathering/blue4.png', type: 'blue' },
-  { image: '../../public/ImageGathering/blue5.png', type: 'blue' },
+  { image: '../../public/ImageGathering/blue5.jpg', type: 'blue' },
   { image: '../../public/ImageGathering/blue6.jpg', type: 'blue' },
   { image: '../../public/ImageGathering/blue7.jpg', type: 'blue' },
   { image: '../../public/ImageGathering/blue8.jpg', type: 'blue' },
