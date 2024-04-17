@@ -210,7 +210,6 @@ textarea {
   margin-bottom: 10px;
 }
 
-<<<<<<< HEAD
 /* CodeBreaker */
 /* feel free to change colors */
 
@@ -297,7 +296,7 @@ body {
   );
   display: flex;
   justify-content: center;
-=======
+}
 /*----------Keyframes------*/
 
 @keyframes minorShift {
@@ -378,5 +377,4 @@ body {
 
 .element-cursedText {
   animation: cursedText 5s infinite;
->>>>>>> da7f364a8d216854442372834a3636048c8a5c2f
 }
