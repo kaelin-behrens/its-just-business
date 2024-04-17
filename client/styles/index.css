@@ -68,8 +68,6 @@
 
 .grid-container {
   font-family: sans-serif;
-  display: grid;
-  grid-template-columns: 50% 50%;
   padding: 10px;
 }
 
@@ -93,7 +91,7 @@
 .captchaform {
   margin: 1%;
   background-color: #0e8af01a;
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 3%;
 }
 
@@ -110,9 +108,7 @@ textarea {
 
 .whackamole {
   background-color: #0e8af01a;
-  border-radius: 15px;
-  width: 80%;
-  height: 80%;
+  border-radius: 10px;
   box-sizing: border-box;
   padding: 5%;
 }
@@ -127,35 +123,37 @@ textarea {
   background-color: #0b132b;
   color: #5bc0be;
   border: none;
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 1% 2%;
   font-size: 50%px;
   cursor: pointer;
 }
 
-.button:hover,
+/* .button:hover,
 .finalbutton:hover {
   background-color: #3a506b;
-}
+} */
 
 .authpopup {
   display: flex;
   justify-content: center;
   background-color: #0e8af01a;
-  border-radius: 15px;
+  border-radius: 10px;
 }
-.finalbutton {
+/* .finalbutton {
   color: #5bc0be;
   border: none;
-  border-radius: 15px;
+  border-radius: 10px;
   font-size: 100%;
   cursor: pointer;
   padding: 0.75em;
-}
+} */
+
 .finalbuttoncontainer {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 3%;
 }
 
 /* CAE wrote for survey popup */
@@ -275,12 +273,18 @@ textarea {
   border: none;
 }
 
+
+.reportcontainer {
+  background: #0c66b03a;
+  border-radius: 40px;
+}
+
+
 .nocode:hover {
   background-color: rgb(255, 255, 255);
   text-decoration: none;
   transition-duration: 0.1s;
 }
-
 
 
 body {
@@ -297,6 +301,20 @@ body {
   display: flex;
   justify-content: center;
 }
+
+
+.wrapper {
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px 125px 50px 125px;
+  padding: 50px 75px 50px 75px;
+}
+.row {
+  flex-direction: row;
+  justify-content: center;
+
 /*----------Keyframes------*/
 
 @keyframes minorShift {
@@ -377,4 +395,5 @@ body {
 
 .element-cursedText {
   animation: cursedText 5s infinite;
+
 }
