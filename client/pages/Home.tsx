@@ -17,7 +17,6 @@ import ColorCaptcha from '../components/CaptchaPuzzle/ColorCaptcha'
 import Cross from '../components/Cross'
 import KPIPopup from '../components/KPIPopup'
 
-
 function Home() {
   const [showPopUp, setShowPopUP] = useState(false)
   function handleSubmit() {
@@ -112,14 +111,8 @@ function Home() {
           </p> */}
         </div>
       </div>
-<<<<<<< HEAD
       <div className="grid-container">
         <div className="codebreaker grid-item">
-=======
-
-      <div className="body">
-        <div className="codebreaker">
->>>>>>> da7f364a8d216854442372834a3636048c8a5c2f
           <CodeBreaker clues={clues} />
         </div>
         <div className="captcha grid-item">
@@ -132,7 +125,6 @@ function Home() {
           <DnD clues={clues} />
         </div>
       </div>
-
 
       <div className="finalbuttoncontainer">
         <button className="finalbutton" onClick={handleSubmit}>
