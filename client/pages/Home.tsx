@@ -112,7 +112,7 @@ function Home() {
               </p>
             </div>
             <div className="grid-container">
-              <div className="codebreaker grid-item">
+              <div className="codebreaker">
                 <CodeBreaker clues={clues} />
               </div>
             </div>
@@ -127,13 +127,13 @@ function Home() {
             <DnD clues={clues} />
           </div>
         </div>
-        <div className="finalbuttoncontainer">
-          <button className="finalbutton" onClick={handleSubmit}>
-            Submit
-          </button>
-        </div>
+
+        <button className="finalbutton" onClick={handleSubmit}>
+          Submit
+        </button>
+
+        {showPopUp && <AuthPopup answer={answer} />}
       </div>
-      {showPopUp && <AuthPopup answer={answer} />}
       <ChatBotPopup />
     </>
   )
