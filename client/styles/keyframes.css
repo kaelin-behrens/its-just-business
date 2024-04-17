@@ -65,7 +65,7 @@
   }
   50% {
     color: #0ee;
-    text-shadow: -1px -1px 0 #e0e;
+    text-shadow: -1px -1px 0 rgb(137, 5, 137);
   }
   75% {
     color: #00e;
