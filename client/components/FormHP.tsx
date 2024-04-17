@@ -25,7 +25,7 @@ function FormHP(props) {
     >
       {displayCaptcha == 'form' && (
         <form onSubmit={handleSubmit}>
-          <div>
+          <div style={{ paddingTop: '10px' }}>
             {' '}
             <div>
               <label htmlFor="quarter">Financial quarter:</label>
@@ -37,11 +37,39 @@ function FormHP(props) {
                 <option value="Q4">Q4</option>
               </select>
             </div>
-            <input defaultValue={'Executive Summary'}></input>
+            <br />
+            <input defaultValue="Executive Summary"></input>
           </div>{' '}
-          <div style={{ margin: '2%', height: '300%' }}>
-            <textarea defaultValue={reportText} rows={25}></textarea>
+          <div style={{ margin: '2%' }}>
+            <textarea defaultValue={reportText} rows={10}></textarea>
           </div>
+          <br />
+          <br />
+          <input
+            type="checkbox"
+            id="vehicle1"
+            name="vehicle1"
+            value="Bike"
+          ></input>
+          <label> Encabulating</label>
+          <br />
+          <br />
+          <input
+            type="checkbox"
+            id="vehicle2"
+            name="vehicle2"
+            value="Car"
+          ></input>{' '}
+          <label> Various</label> <br />
+          <br />
+          <input
+            type="checkbox"
+            id="vehicle3"
+            name="vehicle3"
+            value="Boat"
+          ></input>{' '}
+          <label> Feduciary</label> <br />
+          <br />
           <button type="submit" data-testid="formBtn">
             Submit
           </button>

@@ -41,7 +41,7 @@ function Home() {
   useEffect(() => {
     const timer = setInterval(() => {
       setShowKPI(true)
-    }, 45000)
+    }, 100000)
     const timer2 = setInterval(() => {
       setShowKPI(false)
     }, 15000)
@@ -80,7 +80,7 @@ function Home() {
       <div className="wrapper">
         <div className="header">
           <div className="row">
-            <div>
+            <div className="topstuff">
               <h1 className="title">Important Business Report</h1>
               <p className="blandtext">
                 In todays dynamic marketplace, companies must leverage
@@ -112,28 +112,38 @@ function Home() {
               </p>
             </div>
             <div className="grid-container">
-              <div className="codebreaker grid-item">
+              <div className="codebreaker">
                 <CodeBreaker clues={clues} />
               </div>
             </div>
           </div>
-          <div className="captcha grid-item">
-            <FormHP clues={clues} />
+          <div className="row">
+            <div className="captcha grid-item">
+              <FormHP clues={clues} />
+            </div>{' '}
+            <div className="dragndrop  grid-item">
+              <DnD clues={clues} />
+            </div>
           </div>
-          <div className="whackamole  grid-item">
-            <WhackAMole clues={clues} />
-          </div>
-          <div className="dragndrop  grid-item">
-            <DnD clues={clues} />
+          <div className="row">
+            {' '}
+            <img
+              id="otherimage"
+              src="../../public/stock photography 7.webp"
+              alt="group of people doing business"
+            />
+            <div className="whackamole  grid-item">
+              <WhackAMole clues={clues} />
+            </div>
           </div>
         </div>
-        <div className="finalbuttoncontainer">
-          <button className="finalbutton" onClick={handleSubmit}>
-            Submit
-          </button>
-        </div>
+
+        <button className="finalbutton" onClick={handleSubmit}>
+          Submit
+        </button>
+
+        {showPopUp && <AuthPopup answer={answer} />}
       </div>
-      {showPopUp && <AuthPopup answer={answer} />}
       <ChatBotPopup />
     </>
   )

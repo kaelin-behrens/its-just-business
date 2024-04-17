@@ -49,6 +49,8 @@
 }
 
 .codebreaker {
+  height: auto;
+  width: 500px;
 }
 
 .captcha {
@@ -71,10 +73,6 @@
   padding: 10px;
 }
 
-.fakeimagebutton {
-  height: 80%;
-  z-index: 0;
-}
 .whackamole {
   width: 80%;
   border: none;
@@ -83,9 +81,10 @@
   padding-top: 10%;
 }
 
-.fakeimage {
-  max-width: 100%;
-  max-height: 100%;
+#imagebutton {
+  margin: 0;
+  border: none;
+  padding: 0;
 }
 
 .captchaform {
@@ -112,27 +111,10 @@ textarea {
   box-sizing: border-box;
   padding: 5%;
 }
-/* .dragndrop p {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #3a506b;
-} */
 
-.button {
-  background-color: #0b132b;
-  color: #5bc0be;
-  border: none;
+#otherimage {
   border-radius: 10px;
-  padding: 1% 2%;
-  font-size: 50%px;
-  cursor: pointer;
 }
-
-/* .button:hover,
-.finalbutton:hover {
-  background-color: #3a506b;
-} */
 
 .authpopup {
   display: flex;
@@ -140,20 +122,9 @@ textarea {
   background-color: #0e8af01a;
   border-radius: 10px;
 }
-/* .finalbutton {
-  color: #5bc0be;
-  border: none;
-  border-radius: 10px;
-  font-size: 100%;
-  cursor: pointer;
-  padding: 0.75em;
-} */
 
-.finalbuttoncontainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3%;
+.finalbutton {
+  margin-left: 48%;
 }
 
 /* CAE wrote for survey popup */
@@ -165,7 +136,7 @@ textarea {
   z-index: 20;
   position: fixed;
   content: '';
-  margin: 15%;
+  margin: 17%;
   top: 0;
   left: 0;
   bottom: 0;
@@ -213,7 +184,9 @@ textarea {
 
 .codered {
   background-color: red;
-  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-shadow:
+    rgba(27, 31, 35, 0.04) 0 1px 0,
+    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
   transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
   margin: 0.1rem;
   min-width: 2rem;
@@ -230,7 +203,9 @@ textarea {
 
 .codeyellow {
   background-color: rgb(255, 204, 0);
-  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-shadow:
+    rgba(27, 31, 35, 0.04) 0 1px 0,
+    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
   transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
   margin: 0.1rem;
   min-width: 2rem;
@@ -247,7 +222,9 @@ textarea {
 
 .codegreen {
   background-color: #42bd63;
-  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-shadow:
+    rgba(27, 31, 35, 0.04) 0 1px 0,
+    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
   transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
   margin: 0.1rem;
   min-width: 2rem;
@@ -264,7 +241,9 @@ textarea {
 
 .nocode {
   background-color: rgb(250, 250, 250);
-  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-shadow:
+    rgba(27, 31, 35, 0.04) 0 1px 0,
+    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
   transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
   margin: 0.1rem;
   min-width: 2rem;
@@ -273,12 +252,10 @@ textarea {
   border: none;
 }
 
-
 .reportcontainer {
   background: #0c66b03a;
   border-radius: 40px;
 }
-
 
 .nocode:hover {
   background-color: rgb(255, 255, 255);
@@ -286,6 +263,10 @@ textarea {
   transition-duration: 0.1s;
 }
 
+.topstuff {
+  background-color: #0e8af01a;
+  border-radius: 10px;
+}
 
 body {
   margin: 0;
@@ -302,7 +283,6 @@ body {
   justify-content: center;
 }
 
-
 .wrapper {
   background-color: #ffffff;
   border-radius: 10px;
@@ -314,6 +294,8 @@ body {
 .row {
   flex-direction: row;
   justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 30px;
 }
 
 /*----------Keyframes------*/
@@ -396,5 +378,4 @@ body {
 
 .element-cursedText {
   animation: cursedText 5s infinite;
-
 }
