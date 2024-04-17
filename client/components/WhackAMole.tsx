@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import PasswordPopup from './PasswordPopup'
 
 // type StateType = 'healthy' | 'corrupt'
 type CorruptState =
@@ -96,36 +97,36 @@ const inititalGame: Array<Sentence> = [
     healthyText:
       'Our unwavering commitment to corporate social responsibility underscores our dedication to making a positive impact on society and the environment.',
   },
-  {
-    text: 'By aligning our actions with our values, we create shared value for our stakeholders and contribute to the greater good.',
-    corruptText: 'EvilTemp12',
-    healthyText:
-      'By aligning our actions with our values, we create shared value for our stakeholders and contribute to the greater good.',
-  },
-  {
-    text: 'As we embark on this journey of transformation and growth, we remain guided by our core principles of integrity, transparency, and accountability.',
-    corruptText: 'EvilTemp13',
-    healthyText:
-      'As we embark on this journey of transformation and growth, we remain guided by our core principles of integrity, transparency, and accountability.',
-  },
-  {
-    text: 'By fostering a culture of continuous learning and development, we empower our employees to thrive in an ever-changing business landscape.',
-    corruptText: 'EvilTemp14',
-    healthyText:
-      'By fostering a culture of continuous learning and development, we empower our employees to thrive in an ever-changing business landscape.',
-  },
-  {
-    text: 'Through strategic investments in technology and innovation, we drive operational efficiency and enhance our competitive advantage in the global marketplace.',
-    corruptText: 'EvilTemp15',
-    healthyText:
-      'Through strategic investments in technology and innovation, we drive operational efficiency and enhance our competitive advantage in the global marketplace.',
-  },
-  {
-    text: 'Our strong financial performance reflects our unwavering commitment to delivering long-term value to our shareholders and stakeholders.',
-    corruptText: 'EvilTemp16',
-    healthyText:
-      'Our strong financial performance reflects our unwavering commitment to delivering long-term value to our shareholders and stakeholders.',
-  },
+  // {
+  //   text: 'By aligning our actions with our values, we create shared value for our stakeholders and contribute to the greater good.',
+  //   corruptText: 'EvilTemp12',
+  //   healthyText:
+  //     'By aligning our actions with our values, we create shared value for our stakeholders and contribute to the greater good.',
+  // },
+  // {
+  //   text: 'As we embark on this journey of transformation and growth, we remain guided by our core principles of integrity, transparency, and accountability.',
+  //   corruptText: 'EvilTemp13',
+  //   healthyText:
+  //     'As we embark on this journey of transformation and growth, we remain guided by our core principles of integrity, transparency, and accountability.',
+  // },
+  // {
+  //   text: 'By fostering a culture of continuous learning and development, we empower our employees to thrive in an ever-changing business landscape.',
+  //   corruptText: 'EvilTemp14',
+  //   healthyText:
+  //     'By fostering a culture of continuous learning and development, we empower our employees to thrive in an ever-changing business landscape.',
+  // },
+  // {
+  //   text: 'Through strategic investments in technology and innovation, we drive operational efficiency and enhance our competitive advantage in the global marketplace.',
+  //   corruptText: 'EvilTemp15',
+  //   healthyText:
+  //     'Through strategic investments in technology and innovation, we drive operational efficiency and enhance our competitive advantage in the global marketplace.',
+  // },
+  // {
+  //   text: 'Our strong financial performance reflects our unwavering commitment to delivering long-term value to our shareholders and stakeholders.',
+  //   corruptText: 'EvilTemp16',
+  //   healthyText:
+  //     'Our strong financial performance reflects our unwavering commitment to delivering long-term value to our shareholders and stakeholders.',
+  // },
 ]
 
 function WhackAMole(props) {
@@ -180,13 +181,12 @@ function WhackAMole(props) {
 
   return (
     <>
-      <p>{count}</p>
       {game.map((sentence, idx) => (
         <span key={idx} onClick={() => cleanse(sentence)}>
           {sentence.text}&nbsp;
         </span>
       ))}
-      {win && <p>Password clue: {fragment}</p>}
+      {win && <PasswordPopup password={fragment} />}
     </>
   )
 }
