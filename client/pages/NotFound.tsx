@@ -1,20 +1,19 @@
 import { Link } from 'react-router-dom'
+// import 'not-found.css'
 
 function NotFound() {
   return (
-    <>
-      <h3>Uh Oh! The page you are looking for is not found.</h3>
-      <img src="../../public/404.png" alt="sad face"></img>
+    <div className="not-found-container">
       <h1>404</h1>
+      <p>PAGE NOT FOUND</p>
+      <Link to="/">
+        <img src="../../public/404.png" alt="Back to home" />
+      </Link>
       <p>
-        please
-        <Link to={'/'}> return </Link>
-        to work
+        Please <Link to="/">return</Link> to work
       </p>
-    </>
+    </div>
   )
 }
-
-//Todo Add styling and remove background of/replace image
 
 export default NotFound
