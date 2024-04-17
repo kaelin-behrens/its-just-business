@@ -1,25 +1,69 @@
 .not-found {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center;
+  justify-content: center; */
   height: 100vh;
   text-align: center;
   font-family: 'Arial', sans-serif;
-  background-color: white;
+}
+.timeRow {
+  flex-direction: row;
+}
+.fourOhfour {
+  font-size: 396px;
+  animation: cursedText 0.4s infinite;
+  margin-top: 0px;
+}
+.timeTitle {
+  animation: duplication 4s infinite ease-in-out;
 }
 
-h1 {
-  font-size: 96px;
-  margin: 0.5em 0;
-}
-
-p {
-  font-size: 24px;
-}
-
-img {
-  max-width: 100%;
+.imageNotFound {
+  width: 100%;
   height: auto;
   cursor: pointer;
+  margin-top: -790px;
+}
+
+.return {
+  font-size: 34px;
+}
+
+.return:hover {
+  opacity: 20%;
+  font-size: 44px;
+}
+
+@keyframes cursedText {
+  0%,
+  100% {
+    color: #000;
+    text-shadow: none;
+  }
+  25% {
+    color: #e00;
+    text-shadow: 1px 1px 0 #0e0;
+  }
+  50% {
+    color: #0ee;
+    text-shadow: -1px -1px 0 rgb(137, 5, 137);
+  }
+  75% {
+    color: #00e;
+    text-shadow: 1px -1px 0 #e00;
+  }
+}
+
+@keyframes duplication {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  50% {
+    transform: scale(1.05);
+    filter: blur(2px);
+    opacity: 0.7;
+  }
 }

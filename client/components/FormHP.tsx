@@ -21,6 +21,9 @@ function FormHP(props) {
         width: '80%',
         background: '#0e8af01a',
         borderRadius: '15px',
+        paddingLeft: '30px',
+        paddingRight: '30px',
+        paddingTop: '20px',
       }}
     >
       {displayCaptcha == 'form' && (
@@ -28,7 +31,9 @@ function FormHP(props) {
           <div style={{ paddingTop: '10px' }}>
             {' '}
             <div>
-              <label htmlFor="quarter">Financial quarter:</label>
+              <label htmlFor="quarter">
+                <strong>Financial quarter: </strong>
+              </label>
 
               <select name="quarter" id="quarter" required>
                 <option value="Q1">Q1</option>
@@ -40,7 +45,7 @@ function FormHP(props) {
             <br />
             <input defaultValue="Executive Summary"></input>
           </div>{' '}
-          <div style={{ margin: '2%' }}>
+          <div>
             <textarea defaultValue={reportText} rows={10}></textarea>
           </div>
           <br />

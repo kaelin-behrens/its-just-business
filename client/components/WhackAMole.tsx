@@ -153,9 +153,12 @@ function WhackAMole(props) {
   return (
     <>
       {game.map((sentence, idx) => (
-        <span key={idx} onClick={() => cleanse(sentence)}>
-          {sentence.text}&nbsp;
-        </span>
+        <>
+          <span key={idx} onClick={() => cleanse(sentence)} className="mole">
+            ©️ {sentence.text}&nbsp;
+          </span>
+          <br />
+        </>
       ))}
       {win && <PasswordPopup password={fragment} />}
     </>

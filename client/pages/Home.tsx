@@ -81,7 +81,7 @@ function Home() {
         <div className="header">
           <div className="row">
             <div className="topstuff">
-              <h1 className="title">Important Business Report</h1>
+              <h1 className="title">Company: It&apos;s all business.</h1>
               <p className="blandtext">
                 In todays dynamic marketplace, companies must leverage
                 synergistic strategies to maximize their competitive advantage.
@@ -128,6 +128,7 @@ function Home() {
           <div className="row">
             {' '}
             <img
+              className="secondStock"
               id="otherimage"
               src="../../public/stock photography 7.webp"
               alt="group of people doing business"

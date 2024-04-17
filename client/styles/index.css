@@ -36,16 +36,18 @@
 }
 
 .title {
-  font-size: 160%;
+  font-size: 200%;
   font-weight: bold;
   margin-left: 6%;
+  margin-top: 3%;
+  color: #0b132bff;
 }
 
 .blandtext {
-  font-size: 90%;
+  font-size: 120%;
   color: #3a506b;
   margin-left: 6%;
-  margin-right: 32%;
+  margin-right: 12%;
 }
 
 .codebreaker {
@@ -64,7 +66,7 @@
 .grid-item {
   width: 100%;
   height: auto;
-  text-align: center;
+  /* text-align: center; */
   padding: 20px;
 }
 
@@ -115,6 +117,10 @@ textarea {
 #otherimage {
   border-radius: 10px;
 }
+#fakeimage {
+  border-radius: 10px;
+  width: 100%;
+}
 
 .authpopup {
   display: flex;
@@ -125,6 +131,9 @@ textarea {
 
 .finalbutton {
   margin-left: 48%;
+}
+.mole {
+  font-size: 115%;
 }
 
 /* CAE wrote for survey popup */
@@ -296,6 +305,10 @@ body {
   justify-content: center;
   padding-top: 15px;
   padding-bottom: 30px;
+}
+
+.secondStock:hover {
+  animation: minorShift 1s infinite linear;
 }
 
 /*----------Keyframes------*/
