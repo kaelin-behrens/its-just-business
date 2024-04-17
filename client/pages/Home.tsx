@@ -81,7 +81,7 @@ function Home() {
         <div className="header">
           <div className="row">
             <div className="topstuff">
-              <h1 className="title">Company: It&apos;s all business.</h1>
+              <h1 className="title">Company: It&apos;s just business.</h1>
               <p className="blandtext">
                 In todays dynamic marketplace, companies must leverage
                 synergistic strategies to maximize their competitive advantage.
