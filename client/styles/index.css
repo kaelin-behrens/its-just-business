@@ -314,6 +314,7 @@ body {
 .row {
   flex-direction: row;
   justify-content: center;
+}
 
 /*----------Keyframes------*/
 
