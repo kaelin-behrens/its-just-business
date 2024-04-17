@@ -30,6 +30,7 @@ function AuthPopup(props) {
   }
 
   return (
+
     <div>
       {!goToVerify && <form onSubmit={handleSubmit}>
         <input type="password" value={password} onChange={handleChange}></input>

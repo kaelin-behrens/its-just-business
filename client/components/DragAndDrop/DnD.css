@@ -1,6 +1,5 @@
-.graphBg {
-  /* background-image: url('/public/graphBg.png'); /*TODO: replace image with more tecnical graph (in colour scheme)*/
-  /*background-repeat: no-repeat; */
+/* .graphBg {
+
 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
@@ -8,7 +7,6 @@
   gap: 10px;
   margin-top: 5px;
   padding: 5%;
-  background-color: bisque;
 }
 
 .Graphtitle {
@@ -18,8 +16,9 @@
   text-underline-position: below;
 }
 .xaxis {
-  padding-left: 1%;
   transform: rotate(-90deg);
+  align-self: flex-end;
+  margin-right: -100px;
 }
 
 .yaxis {
@@ -28,6 +27,7 @@
 
 .row {
   display: flex;
+  gap: 0;
 }
 .elementTwo {
   width: 100%;
@@ -45,4 +45,4 @@
   color: #0b132bff;
   text-decoration: underline;
   text-underline-position: below;
-}
+} */
