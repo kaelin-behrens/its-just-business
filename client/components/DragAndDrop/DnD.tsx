@@ -11,6 +11,7 @@ import { arrayMove } from '@dnd-kit/sortable'
 import { Graph } from './Graph'
 
 import './DnD.css'
+import PasswordPopup from '../PasswordPopup'
 
 export default function DnD(props) {
   const fragment = props.clues[3]
@@ -56,7 +57,7 @@ export default function DnD(props) {
 
   return (
     <div className="graphBg">
-      {win && <h1>Password clue: {fragment}</h1>}
+      {win && <PasswordPopup password={fragment} />}
       <p className="glitch Graphtitle">
         Layoffs of Workers vs{' '}
         <button onClick={handleClick} className="remove title">

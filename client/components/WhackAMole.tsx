@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import PasswordPopup from './PasswordPopup'
 
 // type StateType = 'healthy' | 'corrupt'
 type CorruptState =
@@ -180,13 +181,12 @@ function WhackAMole(props) {
 
   return (
     <>
-      <p>{count}</p>
       {game.map((sentence, idx) => (
         <span key={idx} onClick={() => cleanse(sentence)}>
           {sentence.text}&nbsp;
         </span>
       ))}
-      {win && <p>Password clue: {fragment}</p>}
+      {win && <PasswordPopup password={fragment} />}
     </>
   )
 }
