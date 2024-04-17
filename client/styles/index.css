@@ -68,8 +68,8 @@
 
 .grid-container {
   font-family: sans-serif;
-  display: grid;
-  grid-template-columns: 50% 50%;
+  /* display: grid;
+  grid-template-columns: 50% 50%; */
   padding: 10px;
 }
 
@@ -238,4 +238,10 @@ body {
   );
   display: flex;
   justify-content: center;
+}
+
+.wrapper {
+  background-color: #ffffff;
+  display: flex;
+  margin: 10%;
 }
