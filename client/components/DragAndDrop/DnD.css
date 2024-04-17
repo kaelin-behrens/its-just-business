@@ -9,7 +9,7 @@
 
 .Graphtitle {
   color: #0b132bff;
-  padding-left: 10%;
+  padding-right: 40%;
   text-decoration: underline;
   font-weight: bold;
 }
@@ -19,7 +19,7 @@
 }
 
 .yaxis {
-  padding-left: 10%;
+  padding-right: 40%;
 }
 
 .row {
