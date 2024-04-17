@@ -5,7 +5,7 @@ import { Pic, OrganisedPic } from "../../../models/Captcha"
 import { useEffect, useState } from 'react'
 import './Captcha.css';
 
-const imgArr : Pic[] = data.images
+const imgArr : Pic[] = data.images[0]
 helper.shuffle(imgArr)
 const newImgArr = imgArr.slice(0, 16)
 let captchaData : OrganisedPic[] = []
@@ -20,6 +20,7 @@ function ColorCaptcha(props){
     const [startAgain, setStartAgain] = useState(false)
     const [count, setCount]= useState(0)
     const chosen = captchaData[0].type
+    console.log(chosen)
     const [resultText, setResultText] = useState(`${count}/2 complete`)
     const [buttonSlide, setButtonSlide] = useState("")
 
@@ -33,7 +34,7 @@ function ColorCaptcha(props){
       }, [resetTrigger]);
 
     function rearrangeData(){
-        const imgArr = data.images
+        const imgArr = data.images[helper.random(0, 2)]
         helper.shuffle(imgArr)
         const newImgArr = imgArr.slice(0, 16)
         const captchaData : OrganisedPic[] = []
@@ -80,8 +81,11 @@ function ColorCaptcha(props){
         setButtonSlide('')
     }
 
-    return <div className="puzzle-box">
-    <h1>Select all {chosen} squares</h1>
+    return <div style={{paddingLeft: '2rem', paddingTop: '2rem'}}>
+    {chosen === 'black' && <><h3>I'm not a robot</h3> <p>Select all {chosen} squares</p></>}
+    {chosen === 'grey' && <><h3>I'm not a robot</h3> <p>Select all {chosen} squares</p></>}
+    {chosen === 'company colors' && <><h3>Brand awareness testing</h3> <p>Select {chosen}</p></>}
+    {chosen === 'non company colors' && <><h3>Brand awareness testing</h3> <p>Select {chosen}</p></>}
     <div className='color-cap-container'>
     {captchaData.map(pic => 
        <ColorCaptchaImage key={pic.index} info={pic} startAgain={startAgain} stop={setStartAgain} toChild={grid} toParent={setGrid}/>

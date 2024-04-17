@@ -43,6 +43,7 @@
   grid-template-rows: repeat(4, 62px);
   row-gap: 5px;
   column-gap: 5px;
+  width: 250px
 }
 
 /* individual squares for color captcha */
@@ -159,6 +160,12 @@
 .buttonzone {
   margin-top: 10px;
   width: 360px;
+  height: 80px;
+}
+
+.color-buttonzone {
+  margin-top: 10px;
+  width: 200px;
   height: 80px;
 }
 
