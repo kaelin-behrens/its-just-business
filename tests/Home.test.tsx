@@ -31,7 +31,7 @@ describe('Home Page', () => {
     const router = createMemoryRouter([{ path: '*', element: <Home /> }])
     render(<RouterProvider router={router} />)
 
-    const title = screen.getByText(/Important Business Report/i)
+    const title = screen.getByText(/Company: It's just business/i)
     expect(title).toBeInTheDocument()
   })
 })
