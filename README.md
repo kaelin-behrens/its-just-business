@@ -1,4 +1,4 @@
-# Boilerplate: Fullstack with Sass
+# Company - Its just business - Final project for Dev Academy Showcase
 
 ## Setup
 
